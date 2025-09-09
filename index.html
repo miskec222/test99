@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Instrukcije iz matematike Osijek | MatBeat</title>
+  <meta name="description" content="Instrukcije i poduke iz matematike u Osijeku i online — za osnovne i srednje škole te fakultet. Pripreme za ispite, maturu, kolokvije i natjecanja uz individualni pristup." />
+
+  <!-- SEO / Social -->
+  <link rel="canonical" href="https://matbeat.hr/">
+  <meta property="og:title" content="Instrukcije iz matematike Osijek | MatBeat">
+  <meta property="og:description" content="Instrukcije iz matematike u Osijeku i online — ispiti, matura, kolokviji, natjecanja.">
+  <meta property="og:url" content="https://matbeat.hr/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0f172a">
+
+  <!-- Fonts (performance) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons & PWA (optional) -->
+  <link rel="icon" href="/favicon.ico">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Tutor",
+    "name": "MatBeat",
+    "description": "Instrukcije iz matematike u Osijeku i online za OŠ, SŠ i fakultet.",
+    "url": "https://matbeat.hr/",
+    "telephone": "+3850000000",
+    "email": "info@matbeat.hr",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "J. J. Strossmayera 168",
+      "addressLocality": "Osijek",
+      "addressCountry": "HR"
+    },
+    "priceRange": "€25–€90",
+    "areaServed": "HR"
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#0f172a;
+      --card:#111827;
+      --muted:#334155;
+      --text:#e5e7eb;
+      --accent:#22d3ee;
+      --accent-2:#a78bfa;
+      --radius:18px;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:linear-gradient(180deg,#0b1024, #0f172a);color:var(--text);margin:0;overflow-x:hidden;line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    img, iframe{max-width:100%}
+    .container{max-width:1120px;margin:0 auto;padding:0 20px}
+    header{position:sticky;top:0;z-index:40;background:rgba(15,23,42,.7);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px;flex-wrap:wrap}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700;flex:1 1 auto}
+    .logo{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2))}
+    nav.menu a{opacity:.9;cursor:pointer;white-space:nowrap}
+    .menu{display:flex;gap:12px;align-items:center;flex:1 1 auto;justify-content:flex-end;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:8px 12px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#0b1024;font-weight:700;border:none;cursor:pointer;box-shadow:0 8px 24px rgba(34,211,238,.25)}
+    .btn-link{display:inline-flex;align-items:center;justify-content:center;padding:6px 14px;border-radius:12px;color:var(--text);font-weight:700;cursor:pointer}
+    .hero{padding:80px 0 40px}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+    h1{font-size:clamp(34px,6vw,54px);line-height:1.05;margin:.3em 0 .4em;color:var(--text)}
+    .lead{font-size:clamp(16px,2.6vw,20px);color:#cbd5e1;max-width:65ch}
+    .hero-card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);margin-bottom:20px}
+    section{padding:58px 0;border-top:1px solid rgba(255,255,255,.06)}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    .card h3{margin:0 0 .35em}
+    .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .price{font-size:36px;font-weight:800;margin:.2em 0}
+    .muted{color:~94a3b8}
+    footer{padding:40px 0;color:#94a3b8}
+    details{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:16px;margin-bottom:10px;box-shadow:var(--shadow)}
+    summary{cursor:pointer;font-weight:600}
+
+    /* Accessibility */
+    .skip{position:absolute;left:-9999px;top:auto}
+    .skip:focus{left:10px;top:10px;background:#fff;color:#000;padding:8px 12px;border-radius:8px;z-index:100}
+    a:focus, button:focus{outline:2px solid var(--accent); outline-offset:2px}
+
+    /* Hero list markers */
+    .hero-card ul{list-style:none;padding:0;margin:0}
+    .hero-card li{position:relative;padding-left:26px;line-height:1.8}
+    .hero-card li::before{content:"";position:absolute;left:0;top:.55em;width:14px;height:14px;border-radius:4px;background:linear-gradient(135deg,var(--accent),var(--accent-2))}
+
+    @media (max-width:900px){
+      .hero-grid{grid-template-columns:1fr}
+      .grid-3,.pricing{grid-template-columns:1fr}
+      .menu{gap:8px}
+      .btn{padding:6px 10px;font-size:14px}
+    }
+
+    section{scroll-margin-top:90px}
+    #kontakt{scroll-margin-top:90px}
+
+    /* iframe forma - fiksna visina */
+    .form-frame{width:100%;height:650px;max-width:100%;border:none;display:block;border-radius:var(--radius);box-shadow:var(--shadow);background:transparent}
+
+    /* Reduce motion for those who prefer it */
+    @media (prefers-reduced-motion: reduce){
+      *{animation:none !important;transition:none !important;scroll-behavior:auto}
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip">Preskoči na sadržaj</a>
+
+  <header>
+    <div class="container nav" role="navigation" aria-label="Glavna navigacija">
+      <div class="brand"><div class="logo" aria-hidden="true"></div> <span>MatBeat</span></div>
+      <nav class="menu">
+        <a href="#predmeti">Poduke</a>
+        <a href="#cijene">Cijene</a>
+        <a href="#faq">Česta pitanja</a>
+        <a href="#kontakt" class="btn">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" role="main">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h1>Poduke iz matematike</h1>
+          <h2 style="margin-top:0;font-size:clamp(18px,3vw,24px);font-weight:600;color:#cbd5e1">Instrukcije iz matematike u Osijeku i online</h2>
+          <p class="lead">Pripreme za ispite, natjecanja, popravne ispite i kolokvije. Individualni pristup svakom učeniku uz jasna i strpljiva objašnjenja.</p>
+          <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap">
+            <a href="#kontakt" class="btn">Zatraži termin</a>
+            <a href="tel:+3850000000" class="btn-link">Nazovi</a>
+          </div>
+        </div>
+        <div>
+          <div class="hero-card">
+            <h3>Što dobivaš na svakom satu</h3>
+            <ul>
+              <li>Jasna objašnjenja i korak-po-korak rješenja</li>
+              <li>Praćenje napretka i plan učenja</li>
+              <li>Materijali i zadaci nakon sata</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="o-meni">
+      <div class="container">
+        <div class="hero-card">
+          <h3>O meni</h3>
+          <p>Magistar edukacije matematike i informatike s iskustvom rada u osnovnim i srednjim školama.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="predmeti">
+      <div class="container">
+        <h2>Što nudim</h2>
+        <div class="grid-3" style="margin-top:18px">
+          <div class="card"><h3>Matematika i srodna područja</h3><p>Poduke za osnovnu i srednju školu te fakultet — sve razine.</p></div>
+          <div class="card"><h3>Ispiti i kolokviji</h3><p>Pripreme za ispite, natjecanja, popravne ispite, državnu maturu, kolokvije.</p></div>
+          <div class="card"><h3>Individualni pristup</h3><p>Svakom učeniku prilagođen plan rada i dodatni zadatci za vježbu.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cijene">
+      <div class="container">
+        <h2>Cjenik</h2>
+        <div class="pricing" style="margin-top:18px">
+          <div class="card">
+            <h3>Pojedinačni sat</h3>
+            <div class="price">€25</div>
+            <p class="muted">60 min · uživo</p>
+          </div>
+          <div class="card" style="border:2px solid var(--accent);">
+            <h3>Paket 4 sata</h3>
+            <div class="price">€90</div>
+            <p class="muted">ušteda 10% · fleksibilni termini</p>
+          </div>
+          <div class="card">
+            <h3>Pripreme za ispite</h3>
+            <div class="price">po dogovoru</div>
+            <p class="muted">ovisno o trajanju i intenzitetu</p>
+          </div>
+        </div>
+        <p class="muted" style="margin-top:10px">Besplatan kratki probni termin — dogovori kroz kontakt obrazac.</p>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <h2>Česta pitanja</h2>
+        <details>
+          <summary>Mogu li dobiti probni sat?</summary>
+          <p>Da — kratki probni termin je besplatan. Dogovori ga kroz obrazac u nastavku.</p>
+        </details>
+        <details>
+          <summary>Kako otkazati ili pomaknuti termin?</summary>
+          <p>Potrebno je javiti najmanje 24h ranije. U protivnom se sat računa kao održan.</p>
+        </details>
+      </div>
+    </section>
+
+    <section id="kontakt">
+      <div class="container">
+        <!-- Forma -->
+        <iframe
+          aria-label="MatBeat kontakt"
+          title="Kontakt forma — MatBeat"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          sandbox="allow-forms allow-scripts allow-same-origin"
+          frameborder="0"
+          class="form-frame"
+          src="https://forms.zohopublic.eu/infomat1/form/Matbeatkontakt/formperma/5hTqqJ7yI3jLD4Sr0QS4MVm4uvMMwW3IcQ045rs41LM">
+        </iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <ul aria-label="Kontakt" style="list-style:none;padding:0;margin:0;display:flex;gap:16px;flex-wrap:wrap;align-items:center">
+        <li>© <span id="y"></span> MatBeat</li>
+        <li class="muted">Adresa: J. J. Strossmayera 168, Osijek</li>
+        <li class="muted">Email: <a href="mailto:info@matbeat.hr">info@matbeat.hr</a></li>
+        <li class="muted">Telefon: <a href="tel:+3850000000">+385 00 000 000</a></li>
+        <li><a href="/privatnost" class="muted">Pravila privatnosti</a> · <a href="/uvjeti" class="muted">Uvjeti korištenja</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
