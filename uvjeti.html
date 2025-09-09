@@ -1,0 +1,30 @@
+<html lang="hr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Uvjeti korištenja | MatBeat</title>
+<style>
+body{font-family:Inter,system-ui,sans-serif;background:#0f172a;color:#e5e7eb;margin:0;padding:20px;line-height:1.6}
+a{color:#22d3ee}
+h1{font-size:28px;margin-top:0}
+h2{margin-top:1.5em;font-size:20px}
+footer{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);color:#94a3b8}
+</style>
+</head>
+<body>
+<a href="/index.html">↩ Povratak na početnu</a>
+<h1>Uvjeti korištenja</h1>
+<p><em>Zadnje ažurirano: <span id="tos-date"></span></em></p>
+<h2>Svrha stranice</h2>
+<p>Ova stranica služi informiranju o uslugama instrukcija iz matematike i olakšava kontakt putem obrasca.</p>
+<h2>Upotreba sadržaja</h2>
+<p>Sadržaj je informativan i može se mijenjati bez prethodne najave.</p>
+<h2>Odgovornost</h2>
+<p>Nastojimo pružiti točne informacije, no ne odgovaramo za eventualne pogreške ili nedostupnost stranice.</p>
+<footer>© <span id="y"></span> MatBeat · <a href="/privatnost.html">Pravila privatnosti</a></footer>
+<script>
+document.getElementById('y').textContent = new Date().getFullYear();
+document.getElementById('tos-date').textContent = new Date().toLocaleDateString('hr-HR');
+</script>
+</body>
+</html>
