@@ -120,9 +120,11 @@
     .tiers li span{padding-right:6px}
     .tiers li strong{margin-left:10px;white-space:nowrap}
 
+    .tiers .perhour{font-size:0.9em; opacity:.85; margin-left:6px; white-space:nowrap}
+
     /* Emphasize individual rate */
     .tiers li:first-child strong{font-size:1.12em}
-    .tiers li:first-child span{font-size:1.04em;font-weight:600}
+    .tiers li:first-child span:not(.perhour){font-size:1.04em;font-weight:600}
 
     /* Accessibility */
     .skip{position:absolute;left:-9999px;top:auto}
@@ -218,29 +220,30 @@
     <section id="cijene">
       <div class="container">
         <h2>Cjenik</h2>
+        <p class="muted" style="margin:-6px 0 8px">Iznosi "€/h" prikazani su orijentacijski radi snalaženja; naplata se vrši po terminu.</p>
         <div class="pricing pricing-main" style="margin-top:18px">
           <div class="card">
             <h3>Školski sat — 45 min</h3>
             <ul class="tiers">
-              <li><span>Individualno</span><strong>€20</strong></li>
-              <li><span>2 učenika</span><strong>€16 <span class="muted" title="po učeniku">/uč</span></strong></li>
-              <li><span>3 učenika</span><strong>€13 <span class="muted" title="po učeniku">/uč</span></strong></li>
+              <li><span>Individualno</span><strong>€20</strong><span class="muted perhour"> · €26.67/h</span></li>
+              <li><span>2 učenika</span><strong>€16 <span class="muted" title="po učeniku">/uč</span></strong><span class="muted perhour"> · €21.33/h</span></li>
+              <li><span>3 učenika</span><strong>€13 <span class="muted" title="po učeniku">/uč</span></strong><span class="muted perhour"> · €17.33/h</span></li>
             </ul>
           </div>
           <div class="card">
             <h3>60 min</h3>
             <ul class="tiers">
-              <li><span>Individualno</span><strong>€25</strong></li>
-              <li><span>2 učenika</span><strong>€20 <span class="muted" title="po učeniku">/uč</span></strong></li>
-              <li><span>3 učenika</span><strong>€16 <span class="muted" title="po učeniku">/uč</span></strong></li>
+              <li><span>Individualno</span><strong>€25</strong><span class="muted perhour"> · €25.00/h</span></li>
+              <li><span>2 učenika</span><strong>€20 <span class="muted" title="po učeniku">/uč</span></strong><span class="muted perhour"> · €20.00/h</span></li>
+              <li><span>3 učenika</span><strong>€16 <span class="muted" title="po učeniku">/uč</span></strong><span class="muted perhour"> · €16.00/h</span></li>
             </ul>
           </div>
           <div class="card">
             <h3>90 min</h3>
             <ul class="tiers">
-              <li><span>Individualno</span><strong>€35</strong></li>
-              <li><span>2 učenika</span><strong>€28 <span class="muted" title="po učeniku">/uč</span></strong></li>
-              <li><span>3 učenika</span><strong>€23 <span class="muted" title="po učeniku">/uč</span></strong></li>
+              <li><span>Individualno</span><strong>€35</strong><span class="muted perhour"> · €23.33/h</span></li>
+              <li><span>2 učenika</span><strong>€28 <span class="muted" title="po učeniku">/uč</span></strong><span class="muted perhour"> · €18.67/h</span></li>
+              <li><span>3 učenika</span><strong>€23 <span class="muted" title="po učeniku">/uč</span></strong><span class="muted perhour"> · €15.33/h</span></li>
             </ul>
           </div>
         </div>
@@ -250,28 +253,58 @@
           <div class="card">
             <h3>4 × 45 min</h3>
             <ul class="tiers">
-              <li><span>Individualno</span><strong>€70</strong></li>
-              <li><span>2 učenika</span><strong>€55 <span class="muted" title="po učeniku">/uč</span></strong></li>
-              <li><span>3 učenika</span><strong>€45 <span class="muted" title="po učeniku">/uč</span></strong></li>
+              <li><span>Individualno</span><strong>€70</strong><span class="muted perhour"> · €23.33/h</span></li>
+              <li><span>2 učenika</span><strong>€55 <span class="muted" title="po učeniku">/uč</span></strong><span class="muted perhour"> · €18.33/h</span></li>
+              <li><span>3 učenika</span><strong>€45 <span class="muted" title="po učeniku">/uč</span></strong><span class="muted perhour"> · €15.00/h</span></li>
             </ul>
           </div>
           <div class="card">
             <h3>4 × 60 min</h3>
             <ul class="tiers">
-              <li><span>Individualno</span><strong>€85</strong></li>
-              <li><span>2 učenika</span><strong>€70 <span class="muted" title="po učeniku">/uč</span></strong></li>
-              <li><span>3 učenika</span><strong>€55 <span class="muted" title="po učeniku">/uč</span></strong></li>
+              <li><span>Individualno</span><strong>€85</strong><span class="muted perhour"> · €21.25/h</span></li>
+              <li><span>2 učenika</span><strong>€70 <span class="muted" title="po učeniku">/uč</span></strong><span class="muted perhour"> · €17.50/h</span></li>
+              <li><span>3 učenika</span><strong>€55 <span class="muted" title="po učeniku">/uč</span></strong><span class="muted perhour"> · €13.75/h</span></li>
             </ul>
           </div>
           <div class="card">
             <h3>4 × 90 min</h3>
             <ul class="tiers">
-              <li><span>Individualno</span><strong>€115</strong></li>
-              <li><span>2 učenika</span><strong>€95 <span class="muted" title="po učeniku">/uč</span></strong></li>
-              <li><span>3 učenika</span><strong>€75 <span class="muted" title="po učeniku">/uč</span></strong></li>
+              <li><span>Individualno</span><strong>€115</strong><span class="muted perhour"> · €19.17/h</span></li>
+              <li><span>2 učenika</span><strong>€95 <span class="muted" title="po učeniku">/uč</span></strong><span class="muted perhour"> · €15.83/h</span></li>
+              <li><span>3 učenika</span><strong>€75 <span class="muted" title="po učeniku">/uč</span></strong><span class="muted perhour"> · €12.50/h</span></li>
             </ul>
           </div>
           <p class="muted note" style="margin-top:10px">Besplatan kratki probni termin — dogovori kroz kontakt obrazac. Otkazivanje ≥ 24 h ranije. Online po dogovoru.</p>
+        </div>
+
+        <h3 style="margin:28px 0 6px">Pripreme za državnu maturu</h3>
+        <p class="muted" style="margin:-2px 0 10px">90-min satovi. Izaberi paket i uštedi. Termini su fleksibilni.</p>
+        <div class="pricing pricing-packages" style="margin-top:6px">
+          <div class="card">
+            <h3>Matura BLITZ — 6 × 90 min</h3>
+            <ul class="tiers">
+              <li><span>Individualno</span><strong>€165</strong><span class="muted perhour"> · €18.33/h</span></li>
+              <li><span>2 učenika</span><strong>€135 <span class="muted" title="po učeniku">/uč</span></strong><span class="muted perhour"> · €15.00/h</span></li>
+              <li><span>3 učenika</span><strong>€105 <span class="muted" title="po učeniku">/uč</span></strong><span class="muted perhour"> · €11.67/h</span></li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Matura STANDARD — 10 × 90 min</h3>
+            <ul class="tiers">
+              <li><span>Individualno</span><strong>€250</strong><span class="muted perhour"> · €16.67/h</span></li>
+              <li><span>2 učenika</span><strong>€200 <span class="muted" title="po učeniku">/uč</span></strong><span class="muted perhour"> · €13.33/h</span></li>
+              <li><span>3 učenika</span><strong>€160 <span class="muted" title="po učeniku">/uč</span></strong><span class="muted perhour"> · €10.67/h</span></li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Matura INTENZIV — 16 × 90 min</h3>
+            <ul class="tiers">
+              <li><span>Individualno</span><strong>€365</strong><span class="muted perhour"> · €15.21/h</span></li>
+              <li><span>2 učenika</span><strong>€290 <span class="muted" title="po učeniku">/uč</span></strong><span class="muted perhour"> · €12.08/h</span></li>
+              <li><span>3 učenika</span><strong>€240 <span class="muted" title="po učeniku">/uč</span></strong><span class="muted perhour"> · €10.00/h</span></li>
+            </ul>
+          </div>
+          <p class="muted note" style="margin-top:10px">Oznake "€/h" su orijentacijske.</p>
         </div>
       </div>
     </section>
