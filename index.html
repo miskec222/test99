@@ -16,9 +16,11 @@
   <meta name="theme-color" content="#0f172a">
 
   <!-- Fonts (performance) -->
+  <!-- DEV: Isključen web font radi offline pregleda
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  -->
 
   <!-- Icons & PWA (optional) -->
   <link rel="icon" href="/favicon.ico">
@@ -152,6 +154,10 @@
     /* Reduce motion for those who prefer it */
     @media (prefers-reduced-motion: reduce){
       *{animation:none !important;transition:none !important;scroll-behavior:auto}
+    }
+      @media (max-width:900px){
+      /* Ensure all pricing grids (including packages & matura) stack to 1 column on mobile */
+      .pricing.pricing-packages{grid-template-columns:1fr}
     }
   </style>
 </head>
