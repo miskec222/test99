@@ -78,12 +78,59 @@
     .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
     .card h3{margin:0 0 .35em}
+    /* Smaller titles and muted text in feature cards */
+    #predmeti .card h3{font-size:1.05rem}
+    #predmeti .card p{color:#94a3b8}
+
+    /* Emphasis: main price list vs packages */
+    .pricing-main .card{border:2px solid var(--accent);box-shadow:var(--shadow)}
+    .pricing-main .card h3{font-size:1.08rem}
+
+    .pricing-packages{grid-template-columns:repeat(4,1fr)}
+    .pricing-packages .card{border:1px solid rgba(255,255,255,.08)}
+    .pricing-packages .card h3{font-size:0.98rem;color:#cbd5e1}
+
+    @media (max-width:1200px){
+      .pricing-packages{grid-template-columns:repeat(2,1fr)}
+    }
+    /* <=900px već postoji pravilo koje sve pricing gride spušta na 1 kolonu */
     .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    /* Force 4-in-a-row for packages on wide screens */
+    .pricing.pricing-packages{grid-template-columns:repeat(4,1fr);gap:12px}
+    /* Compact package cards */
+    .pricing-packages .card{padding:16px}
+    .pricing-packages .card h3{font-size:0.95rem;color:#cbd5e1;margin-bottom:6px}
+    .pricing-packages .tiers li{padding:6px 0;gap:6px}
+    .pricing-packages .tiers li span{padding-right:4px;font-size:0.95em}
+    .pricing-packages .tiers li strong{margin-left:8px;font-size:0.95em}
+    .pricing-packages .tiers li:first-child strong{font-size:1.04em}
+    .pricing-packages .tiers li:first-child span{font-size:1.0em;font-weight:600}
+    /* Packages footnote full-width */
+    .pricing-packages .note{grid-column:1/-1;white-space:nowrap}
+    @media (max-width:900px){.pricing-packages .note{white-space:normal}}
     .price{font-size:36px;font-weight:800;margin:.2em 0}
     .muted{color:#94a3b8}
     footer{padding:40px 0;color:#94a3b8}
     details{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:16px;margin-bottom:10px;box-shadow:var(--shadow)}
     summary{cursor:pointer;font-weight:600}
+
+    /* Subtle benefits strip (hero) */
+    .small-benefits{margin-top:10px;color:#94a3b8;font-size:.95rem}
+
+    @media (max-width:480px){
+      .small-benefits{font-size:.9rem; line-height:1.4}
+    }  
+
+    /* Pricing tiers list */
+    .tiers{list-style:none;padding:0;margin:12px 0 0}
+    .tiers li{display:flex;align-items:baseline;gap:8px;padding:8px 0;border-top:1px solid rgba(255,255,255,.08)}
+    .tiers li:first-child{border-top:none}
+    .tiers li span{padding-right:6px}
+    .tiers li strong{margin-left:10px;white-space:nowrap}
+
+    /* Emphasize individual rate */
+    .tiers li:first-child strong{font-size:1.12em}
+    .tiers li:first-child span{font-size:1.04em;font-weight:600}
 
     /* Accessibility */
     .skip{position:absolute;left:-9999px;top:auto}
@@ -139,6 +186,7 @@
           <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap">
             <a href="#kontakt" class="btn">Zatraži termin</a>
           </div>
+          <p class="small-benefits">Olakšaj si praćenje na satu · Ispravi nedostatke u predznanju<br>Uhvati korak s gradivom · Uoči tipične greške i nauči ih izbjeći</p>
         </div>
         <div>
           <div class="hero-card">
@@ -146,7 +194,7 @@
             <ul>
               <li>Jasna objašnjenja i korak-po-korak rješenja</li>
               <li>Praćenje napretka i plan učenja</li>
-              <li>Materijali i zadaci nakon sata</li>
+              <li>Po želji: mali grupni satovi (do 3 učenika)</li>
             </ul>
           </div>
         </div>
@@ -166,9 +214,10 @@
       <div class="container">
         <h2>Što nudim</h2>
         <div class="grid-3" style="margin-top:18px">
-          <div class="card"><h3>Matematika i srodna područja</h3><p>Poduke za osnovnu i srednju školu — sve razine.</p></div>
-          <div class="card"><h3>Ispiti i matura</h3><p>Pripreme za ispite, natjecanja, popravne ispite i državnu maturu.</p></div>
-          <div class="card"><h3>Individualni pristup</h3><p>Svakom učeniku prilagođen plan rada i dodatni zadatci za vježbu.</p></div>
+          <div class="card"><h3>Drži korak s nastavom</h3><p>Poduke za osnovnu i srednju školu — sve razine.</p></div>
+          <div class="card"><h3>Priprema za ispit bez nervoze</h3><p>Pripreme za ispite, natjecanja, popravne ispite i državnu maturu.</p></div>
+          <div class="card"><h3>Gradivo po mjeri učenika</h3><p>Svakom učeniku prilagođen plan rada i dodatni zadatci za vježbu.</p></div>
+          <div class="card"><h3>Male grupe do 3 učenika</h3><p>Do 3 učenika s istim gradivom — poticajna atmosfera i niža cijena po osobi.</p></div>
         </div>
       </div>
     </section>
@@ -176,24 +225,67 @@
     <section id="cijene">
       <div class="container">
         <h2>Cjenik</h2>
-        <div class="pricing" style="margin-top:18px">
+        <div class="pricing pricing-main" style="margin-top:18px">
           <div class="card">
-            <h3>Pojedinačni sat</h3>
-            <div class="price">€25</div>
-            <p class="muted">60 min · uživo</p>
-          </div>
-          <div class="card" style="border:2px solid var(--accent);">
-            <h3>Paket 4 sata</h3>
-            <div class="price">€90</div>
-            <p class="muted">ušteda 10% · fleksibilni termini</p>
+            <h3>Školski sat — 45 min</h3>
+            <ul class="tiers">
+              <li><span>Individualno</span><strong>€20</strong></li>
+              <li><span>2 učenika</span><strong>€14 <span class="muted" title="po učeniku">/uč</span></strong></li>
+              <li><span>3 učenika</span><strong>€11 <span class="muted" title="po učeniku">/uč</span></strong></li>
+            </ul>
           </div>
           <div class="card">
-            <h3>Pripreme za ispite</h3>
-            <div class="price">po dogovoru</div>
-            <p class="muted">ovisno o trajanju i intenzitetu</p>
+            <h3>60 min</h3>
+            <ul class="tiers">
+              <li><span>Individualno</span><strong>€25</strong></li>
+              <li><span>2 učenika</span><strong>€18 <span class="muted" title="po učeniku">/uč</span></strong></li>
+              <li><span>3 učenika</span><strong>€15 <span class="muted" title="po učeniku">/uč</span></strong></li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>90 min</h3>
+            <ul class="tiers">
+              <li><span>Individualno</span><strong>€35</strong></li>
+              <li><span>2 učenika</span><strong>€25 <span class="muted" title="po učeniku">/uč</span></strong></li>
+              <li><span>3 učenika</span><strong>€20 <span class="muted" title="po učeniku">/uč</span></strong></li>
+            </ul>
           </div>
         </div>
-        <p class="muted" style="margin-top:10px">Besplatan kratki probni termin — dogovori kroz kontakt obrazac.</p>
+        <h3 style="margin:28px 0 6px">Paketi</h3>
+        <div class="pricing pricing-packages" style="margin-top:6px">
+          <div class="card">
+            <h3>Brzi refresh — 3 × 90 min</h3>
+            <ul class="tiers">
+              <li><span>Individualno</span><strong>€95</strong></li>
+              <li><span>2 učenika</span><strong>€68 <span class="muted" title="po učeniku">/uč</span></strong></li>
+              <li><span>3 učenika</span><strong>€54 <span class="muted" title="po učeniku">/uč</span></strong></li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>4 × 60 min</h3>
+            <ul class="tiers">
+              <li><span>Individualno</span><strong>€90</strong></li>
+              <li><span>2 učenika</span><strong>€65 <span class="muted" title="po učeniku">/uč</span></strong></li>
+              <li><span>3 učenika</span><strong>€54 <span class="muted" title="po učeniku">/uč</span></strong></li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>4 × 90 min</h3>
+            <ul class="tiers">
+              <li><span>Individualno</span><strong>€125</strong></li>
+              <li><span>2 učenika</span><strong>€90 <span class="muted" title="po učeniku">/uč</span></strong></li>
+              <li><span>3 učenika</span><strong>€72 <span class="muted" title="po učeniku">/uč</span></strong></li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Intenziv — 6 × 90 min</h3>
+            <ul class="tiers">
+              <li><span>Individualno</span><strong>€190</strong></li>
+              <li><span>2 učenika</span><strong>€135 <span class="muted" title="po učeniku">/uč</span></strong></li>
+              <li><span>3 učenika</span><strong>€108 <span class="muted" title="po učeniku">/uč</span></strong></li>
+            </ul>
+          </div>
+        <p class="muted note" style="margin-top:10px">Besplatan kratki probni termin — dogovori kroz kontakt obrazac. Otkazivanje ≥ 24 h ranije. Online po dogovoru.</p>
       </div>
     </section>
 
@@ -203,6 +295,10 @@
         <details>
           <summary>Mogu li satovi biti online?</summary>
           <p>Primarno uživo u Osijeku, a online po dogovoru (npr. kad je udaljenost ili bolest prepreka dolasku).</p>
+        </details>
+        <details>
+          <summary>Radite li u grupama?</summary>
+          <p>Da — radim s malim grupama do 3 učenika ako pokrivaju isto gradivo. Preporuka je da su učenici istog razreda ili imaju sličan cilj.</p>
         </details>
         <details>
       <summary>Gdje se nalazimo?</summary>
