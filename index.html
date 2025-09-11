@@ -8,7 +8,7 @@
 
   <!-- SEO / Social -->
   <link rel="canonical" href="https://www.matbeat.hr/">
-  <meta property="og:title" content="matbeat">
+  <meta property="og:title" content="MatBeat">
   <meta property="og:description" content="Instrukcije iz matematike u Osijeku — ispiti, matura, natjecanja.">
   <meta property="og:url" content="https://www.matbeat.hr/">
   <meta property="og:type" content="website">
@@ -73,35 +73,41 @@
     .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
     .card h3{margin:0 0 .35em}
+
+    /* Naglasi glavne cijene */
     .pricing-main .card{border:2px solid var(--accent);box-shadow:var(--shadow)}
     .pricing-main .card h3{font-size:1.08rem}
 
-    .pricing-packages{grid-template-columns:repeat(3,1fr)}
-    .pricing-packages .card{border:1px solid rgba(255,255,255,.08)}
-
-    @media (max-width:1200px){
-      .pricing-packages{grid-template-columns:repeat(2,1fr)}
-    }
+    /* ===== GRID ZA KARTICE — ispravljeno ===== */
     .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .pricing.pricing-packages{grid-template-columns:repeat(3,1fr);gap:18px}
+    .pricing.pricing-packages{grid-template-columns:repeat(3,1fr)} /* i Paketi 3 u redu */
+
+    /* tablet: 2 u redu */
+    @media (max-width:1200px){
+      .pricing, .pricing.pricing-packages{grid-template-columns:repeat(2,1fr)}
+    }
+    /* mobitel: 1 u redu */
+    @media (max-width:900px){
+      .pricing, .pricing.pricing-packages{grid-template-columns:1fr}
+    }
+
+    .pricing-packages .card{border:1px solid rgba(255,255,255,.08)}
     .pricing-packages .note{grid-column:1/-1;white-space:nowrap}
     @media (max-width:900px){.pricing-packages .note{white-space:normal}}
+
     .muted{color:#94a3b8}
     footer{padding:40px 0;color:#94a3b8}
     details{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:16px;margin-bottom:10px;box-shadow:var(--shadow)}
     summary{cursor:pointer;font-weight:600}
 
     .small-benefits{margin-top:10px;color:#94a3b8;font-size:.95rem}
-    @media (max-width:480px){
-      .small-benefits{font-size:.9rem; line-height:1.4}
-    }
+    @media (max-width:480px){.small-benefits{font-size:.9rem; line-height:1.4}}
 
     .tiers{list-style:none;padding:0;margin:12px 0 0}
     .tiers li{display:flex;align-items:baseline;gap:8px;padding:8px 0;border-top:1px solid rgba(255,255,255,.08)}
     .tiers li:first-child{border-top:none}
     .tiers li span{padding-right:6px}
     .tiers li strong{margin-left:10px;white-space:nowrap;font-variant-numeric:tabular-nums}
-
     .tiers .group{display:grid;grid-template-columns:minmax(64px,90px) 1fr;align-items:start;--group-gap:6px;gap:var(--group-gap);padding:6px 0 4px;border-top:1px solid rgba(255,255,255,.06);font-size:0.94em}
     .tiers .group > span{font-weight:600;color:#cbd5e1;align-self:center}
     .tiers .subtiers{list-style:none;margin:0;padding:0 12px 0 0;display:grid;gap:3px;font-size:1em}
@@ -109,22 +115,9 @@
     .tiers .subtiers li span{padding-right:6px;white-space:nowrap;font-weight:400;font-size:1em}
     .tiers .subtiers li strong{display:inline-block;min-width:4ch;text-align:right;margin-left:auto;margin-right:10px;white-space:nowrap;font-variant-numeric:tabular-nums}
 
-    .tiers .group{position:relative}
-    .tiers .subtiers li{position:relative}
-    .tiers > li:first-child strong{font-size:1.12em;margin-left:14px}
-    .tiers > li:first-child span{font-size:1.04em;font-weight:600}
-
-    .skip{position:absolute;left:-9999px;top:auto}
-    .skip:focus{left:10px;top:10px;background:#fff;color:#000;padding:8px 12px;border-radius:8px;z-index:100}
-    a:focus, button:focus{outline:2px solid var(--accent); outline-offset:2px}
-
-    .hero-card ul{list-style:none;padding:0;margin:0}
-    .hero-card li{position:relative;padding-left:26px;line-height:1.8}
-    .hero-card li::before{content:"";position:absolute;left:0;top:.55em;width:14px;height:14px;border-radius:4px;background:linear-gradient(135deg,var(--accent),var(--accent-2))}
-
     @media (max-width:900px){
       .hero-grid{grid-template-columns:1fr}
-      .grid-3,.pricing{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr}
       .menu{gap:8px}
       .btn{padding:6px 10px;font-size:14px}
     }
@@ -133,7 +126,6 @@
     #o-meni{padding-top:23px;padding-bottom:23px}
     #cijene{padding-top:23px}
 
-    .pricing.pricing-packages{grid-template-columns:1fr}
     header.hide{transform:translateY(-100%)}
 
     #cijene h2 + p.muted,
@@ -336,6 +328,7 @@
             </ul>
           </div>
         </div>
+
       </div>
     </section>
 
