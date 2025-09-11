@@ -191,6 +191,23 @@
     @media (max-width:600px){
       .contact-frame{ height:520px }
     }
+  
+    /* === DODANO: mobilni header — sakrij tekst branda i sabij navigaciju === */
+    @media (max-width:900px){
+      .brand span{ display:none }
+      .brand{ gap:6px }
+      .menu{ gap:10px; flex-wrap:nowrap }
+      .menu a{ font-size:0.95rem; height:40px; padding:0 8px }
+      .btn{ height:40px; padding:0 12px }
+    }
+    @media (max-width:600px){
+      .menu{ gap:8px; flex-wrap:nowrap }
+      .menu a{ font-size:0.9rem; height:36px; padding:0 6px }
+      .btn{ height:36px; padding:0 10px }
+    }
+    @media (max-width:480px){
+      .container{ padding:0 14px }
+    }
   </style>
 </head>
 <body>
