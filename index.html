@@ -117,12 +117,13 @@
     .menu{display:flex; gap:14px; flex-wrap:wrap; align-items:center}
     .menu a{opacity:.92}
 
-    /* Mobile header fix: allow wrapping & auto height */
+    /* Mobile header: single line on narrow screens */
     @media (max-width:560px){
-      .nav{height:auto; padding:8px 0; flex-wrap:wrap; gap:8px}
-      .brand{margin-bottom:6px}
-      .menu{width:100%; justify-content:flex-start; gap:8px}
-      .menu a{font-size:14px}
+      .nav{height:56px; padding:6px 8px; flex-wrap:nowrap; gap:8px}
+      .brand{margin-bottom:0}
+      .logo{width:28px; height:28px}
+      .menu{flex:1 1 auto; justify-content:flex-end; gap:8px; overflow-x:auto; white-space:nowrap; align-items:center}
+      .menu a{font-size:14px; line-height:1}
       .menu .btn{padding:6px 10px; font-size:14px; box-shadow:none}
     }
 
