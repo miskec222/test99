@@ -192,7 +192,7 @@
 
     /* Emphasized price layout */
     .tier-head{display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin:2px 0 8px}
-    .tier-head h3{margin:0; font-size:1.05rem}
+    .tier-head h3{margin:0; font-size:clamp(1.15rem, 1.8vw, 1.4rem); font-weight:800}
 
     /* NEW: price matrix with 3 options per stavka */
     .price-matrix{display:grid; grid-template-columns:repeat(3,1fr); gap:10px}
@@ -202,20 +202,27 @@
     .price-pill.primary{background:linear-gradient(135deg, rgba(14,165,165,.18), rgba(37,99,235,.18)); border-color:rgba(255,255,255,.18)}
 
     /* NEW: top-right individual badge and group grid */
-    .indiv{display:flex; align-items:baseline; gap:10px; padding:0; border:none; background:transparent; border-radius:0; box-shadow:none; font-weight:700}
-    .indiv .label{font-weight:600; font-size:.95rem; opacity:.9}
-    .indiv .amount{font-weight:800; font-size:1.05rem}
-    .group-row{display:flex; gap:18px; align-items:baseline; flex-wrap:wrap; margin-top:8px}
-    .group-item{display:flex; align-items:baseline; gap:8px; padding:4px 0 6px 12px; border-left:1px solid var(--stroke)}
-    .group-item:first-child{border-left:none; padding-left:0}
+    .indiv{display:flex; align-items:baseline; gap:0; padding:0; border:none; background:transparent; border-radius:0; box-shadow:none; font-weight:700}
+    .indiv .label{font-weight:700; font-size:1.05rem; opacity:.95}
+    .indiv .amount{font-weight:900; font-size:1.28rem; font-variant-numeric: tabular-nums}
+    .group-row{display:contents}
+    .group-left{font-weight:700; font-size:1.05rem; opacity:.95; grid-row:1 / span 2; align-self:center}
+    .group-right{display:flex; flex-direction:column; gap:4px; justify-self:end}
+    .group-right .row{display:flex; align-items:baseline; gap:0}
+    
 
     /* Layout: align items in a 2×2 grid: title left, individual right, then groups below */
     .pricing .card{ display:grid; grid-template-columns:1fr auto; column-gap:12px; row-gap:8px; align-items:start }
-    .pricing .card .tier-head{ grid-column:1 / -1; display:grid; grid-template-columns:1fr auto; align-items:baseline; gap:12px }
-    .pricing .card .group-row{ grid-column:1 / -1; display:grid; grid-template-columns:1fr auto; column-gap:12px; align-items:baseline }
+    .pricing .card .tier-head{ grid-column:1 / -1; display:grid; grid-template-columns:1fr; align-items:start; gap:6px }
+    .pricing .card .group-row{ grid-column:1 / -1; display:grid; grid-template-columns:auto auto 1fr; grid-template-rows:auto auto; column-gap:0; align-items:center }
     .group-item{ border:none; padding-left:0 }
 
     .pricing .card .tier-head::after{ content:""; grid-column:1 / -1; height:1px; background:var(--stroke); opacity:.7; margin-top:6px }
+
+    .indiv .label::after{ content:"·"; display:inline-block; margin:0 2ch; opacity:.7 }
+    .group-right .row .label::after{ content:"·"; opacity:.7; margin:0 .6ch }
+
+    .group-sep{align-self:center; justify-self:center; opacity:.7; margin:0 2ch}
 
     /* FAQ */
     details{background:var(--card); border:1px solid var(--stroke); border-radius:var(--radius); padding:14px; margin-bottom:10px}
@@ -334,28 +341,40 @@
     <section id="cijene">
       <div class="container">
         <h2>Cjenik</h2>
-        <p class="muted price-note">Cijene su po učeniku. Opcije: <strong>individualno</strong>, <strong>grupno za 2</strong> (−20%), <strong>grupno za 3</strong> (−35%).</p>
+        <p class="muted price-note">Cijene su po učeniku. Opcije: <strong>individualno</strong>, <strong>za 2 učenika</strong> (−20%), <strong>za 3 učenika</strong> (−35%).</p>
 
         <div class="pricing" style="margin-top:6px">
           <div class="card">
             <div class="tier-head"><h3>45 min</h3><div class="indiv"><span class="label">Individualno</span><span class="amount">€20</span></div></div>
             <div class="group-row">
-              <div class="group-item"><span class="label">Grupno (2)</span><span class="amount">€16</span></div>
-              <div class="group-item"><span class="label">Grupno (3)</span><span class="amount">€13</span></div>
+              <div class="group-left">Grupno</div>
+              <div class="group-sep" aria-hidden="true">·</div>
+              <div class="group-right">
+                <div class="row"><span class="label">za 2 učenika</span><span class="amount">€16 /po uč.</span></div>
+                <div class="row"><span class="label">za 3 učenika</span><span class="amount">€13 /po uč.</span></div>
+              </div>
             </div>
           </div>
           <div class="card">
             <div class="tier-head"><h3>60 min</h3><div class="indiv"><span class="label">Individualno</span><span class="amount">€25</span></div></div>
             <div class="group-row">
-              <div class="group-item"><span class="label">Grupno (2)</span><span class="amount">€20</span></div>
-              <div class="group-item"><span class="label">Grupno (3)</span><span class="amount">€16</span></div>
+              <div class="group-left">Grupno</div>
+              <div class="group-sep" aria-hidden="true">·</div>
+              <div class="group-right">
+                <div class="row"><span class="label">za 2 učenika</span><span class="amount">€20 /po uč.</span></div>
+                <div class="row"><span class="label">za 3 učenika</span><span class="amount">€16 /po uč.</span></div>
+              </div>
             </div>
           </div>
           <div class="card">
             <div class="tier-head"><h3>90 min</h3><div class="indiv"><span class="label">Individualno</span><span class="amount">€35</span></div></div>
             <div class="group-row">
-              <div class="group-item"><span class="label">Grupno (2)</span><span class="amount">€28</span></div>
-              <div class="group-item"><span class="label">Grupno (3)</span><span class="amount">€23</span></div>
+              <div class="group-left">Grupno</div>
+              <div class="group-sep" aria-hidden="true">·</div>
+              <div class="group-right">
+                <div class="row"><span class="label">za 2 učenika</span><span class="amount">€28 /po uč.</span></div>
+                <div class="row"><span class="label">za 3 učenika</span><span class="amount">€23 /po uč.</span></div>
+              </div>
             </div>
           </div>
         </div>
@@ -364,22 +383,34 @@
           <div class="card">
             <div class="tier-head"><h3>4 × 45 min</h3><div class="indiv"><span class="label">Individualno</span><span class="amount">€70</span></div></div>
             <div class="group-row">
-              <div class="group-item"><span class="label">Grupno (2)</span><span class="amount">€56</span></div>
-              <div class="group-item"><span class="label">Grupno (3)</span><span class="amount">€46</span></div>
+              <div class="group-left">Grupno</div>
+              <div class="group-sep" aria-hidden="true">·</div>
+              <div class="group-right">
+                <div class="row"><span class="label">za 2 učenika</span><span class="amount">€56 /po uč.</span></div>
+                <div class="row"><span class="label">za 3 učenika</span><span class="amount">€46 /po uč.</span></div>
+              </div>
             </div>
           </div>
           <div class="card">
             <div class="tier-head"><h3>4 × 60 min</h3><div class="indiv"><span class="label">Individualno</span><span class="amount">€85</span></div></div>
             <div class="group-row">
-              <div class="group-item"><span class="label">Grupno (2)</span><span class="amount">€68</span></div>
-              <div class="group-item"><span class="label">Grupno (3)</span><span class="amount">€55</span></div>
+              <div class="group-left">Grupno</div>
+              <div class="group-sep" aria-hidden="true">·</div>
+              <div class="group-right">
+                <div class="row"><span class="label">za 2 učenika</span><span class="amount">€68 /po uč.</span></div>
+                <div class="row"><span class="label">za 3 učenika</span><span class="amount">€55 /po uč.</span></div>
+              </div>
             </div>
           </div>
           <div class="card">
             <div class="tier-head"><h3>4 × 90 min</h3><div class="indiv"><span class="label">Individualno</span><span class="amount">€115</span></div></div>
             <div class="group-row">
-              <div class="group-item"><span class="label">Grupno (2)</span><span class="amount">€92</span></div>
-              <div class="group-item"><span class="label">Grupno (3)</span><span class="amount">€75</span></div>
+              <div class="group-left">Grupno</div>
+              <div class="group-sep" aria-hidden="true">·</div>
+              <div class="group-right">
+                <div class="row"><span class="label">za 2 učenika</span><span class="amount">€92 /po uč.</span></div>
+                <div class="row"><span class="label">za 3 učenika</span><span class="amount">€75 /po uč.</span></div>
+              </div>
             </div>
           </div>
         </div>
@@ -389,22 +420,34 @@
           <div class="card">
             <div class="tier-head"><h3>6 × 90 min</h3><div class="indiv"><span class="label">Individualno</span><span class="amount">€165</span></div></div>
             <div class="group-row">
-              <div class="group-item"><span class="label">Grupno (2)</span><span class="amount">€132</span></div>
-              <div class="group-item"><span class="label">Grupno (3)</span><span class="amount">€107</span></div>
+              <div class="group-left">Grupno</div>
+              <div class="group-sep" aria-hidden="true">·</div>
+              <div class="group-right">
+                <div class="row"><span class="label">za 2 učenika</span><span class="amount">€132 /po uč.</span></div>
+                <div class="row"><span class="label">za 3 učenika</span><span class="amount">€107 /po uč.</span></div>
+              </div>
             </div>
           </div>
           <div class="card">
             <div class="tier-head"><h3>10 × 90 min</h3><div class="indiv"><span class="label">Individualno</span><span class="amount">€250</span></div></div>
             <div class="group-row">
-              <div class="group-item"><span class="label">Grupno (2)</span><span class="amount">€200</span></div>
-              <div class="group-item"><span class="label">Grupno (3)</span><span class="amount">€163</span></div>
+              <div class="group-left">Grupno</div>
+              <div class="group-sep" aria-hidden="true">·</div>
+              <div class="group-right">
+                <div class="row"><span class="label">za 2 učenika</span><span class="amount">€200 /po uč.</span></div>
+                <div class="row"><span class="label">za 3 učenika</span><span class="amount">€163 /po uč.</span></div>
+              </div>
             </div>
           </div>
           <div class="card">
             <div class="tier-head"><h3>16 × 90 min</h3><div class="indiv"><span class="label">Individualno</span><span class="amount">€365</span></div></div>
             <div class="group-row">
-              <div class="group-item"><span class="label">Grupno (2)</span><span class="amount">€292</span></div>
-              <div class="group-item"><span class="label">Grupno (3)</span><span class="amount">€237</span></div>
+              <div class="group-left">Grupno</div>
+              <div class="group-sep" aria-hidden="true">·</div>
+              <div class="group-right">
+                <div class="row"><span class="label">za 2 učenika</span><span class="amount">€292 /po uč.</span></div>
+                <div class="row"><span class="label">za 3 učenika</span><span class="amount">€237 /po uč.</span></div>
+              </div>
             </div>
           </div>
         </div>
