@@ -192,7 +192,7 @@
 
     /* Emphasized price layout */
     .tier-head{display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin:2px 0 8px}
-    .tier-head h3{margin:0; font-size:clamp(1.15rem, 1.8vw, 1.4rem); font-weight:800}
+    .tier-head h3{margin:0; font-size:clamp(1.05rem, 1.6vw, 1.28rem); font-weight:800; white-space:nowrap}
 
     /* NEW: price matrix with 3 options per stavka */
     .price-matrix{display:grid; grid-template-columns:repeat(3,1fr); gap:10px}
@@ -224,9 +224,14 @@
 
     .group-sep{align-self:center; justify-self:center; text-align:center; opacity:.7; margin:0}
 
+    .tier-head h3 .h-tag{font-weight:800}
+    .tier-head h3 .h-tag::after{content:" ·"; opacity:.7; margin:0 .5ch}
+
     /* FAQ */
     details{background:var(--card); border:1px solid var(--stroke); border-radius:var(--radius); padding:14px; margin-bottom:10px}
     summary{cursor:pointer; font-weight:600}
+
+    .subtitle{font-style:italic; color:var(--muted); font-size:.95rem}
 
     /* Helper text */
     .muted{color:var(--muted)}
@@ -419,7 +424,7 @@
         <p class="muted price-note" style="margin:-2px 0 10px">Termini od 90 min — vrijeme po dogovoru.</p>
         <div class="pricing" style="margin-top:6px">
           <div class="card">
-            <div class="tier-head"><h3>6 × 90 min</h3><div class="indiv"><span class="label">Individualno</span><span class="amount">€165</span></div></div>
+            <div class="tier-head"><h3><span class="h-tag">Brza priprema</span> 6 × 90 min</h3><div class="subtitle">Kratki ciklus, fokus na tipične zadatke.</div><div class="indiv"><span class="label">Individualno</span><span class="amount">€165</span></div></div>
             <div class="group-row">
               <div class="group-left">Grupno</div>
               <div class="group-sep" aria-hidden="true">·</div>
@@ -430,7 +435,7 @@
             </div>
           </div>
           <div class="card">
-            <div class="tier-head"><h3>10 × 90 min</h3><div class="indiv"><span class="label">Individualno</span><span class="amount">€250</span></div></div>
+            <div class="tier-head"><h3><span class="h-tag">Temeljita</span> 10 × 90 min</h3><div class="subtitle">Sve cjeline + 1–2 probne mature.</div><div class="indiv"><span class="label">Individualno</span><span class="amount">€250</span></div></div>
             <div class="group-row">
               <div class="group-left">Grupno</div>
               <div class="group-sep" aria-hidden="true">·</div>
@@ -441,7 +446,7 @@
             </div>
           </div>
           <div class="card">
-            <div class="tier-head"><h3>16 × 90 min</h3><div class="indiv"><span class="label">Individualno</span><span class="amount">€365</span></div></div>
+            <div class="tier-head"><h3><span class="h-tag">Intenzivna</span> 16 × 90 min</h3><div class="subtitle">Detaljno gradivo + više probnih ispita.</div><div class="indiv"><span class="label">Individualno</span><span class="amount">€365</span></div></div>
             <div class="group-row">
               <div class="group-left">Grupno</div>
               <div class="group-sep" aria-hidden="true">·</div>
@@ -480,7 +485,7 @@
         </details>
         <details>
           <summary>Kako funkcionira grupni rad?</summary>
-          <p>Grupe su do 3 učenika. Preporučujemo učenike istog razreda i sličnog programa/razine kako bi tempo bio ujednačen. Cijene su po učeniku; termine dogovaramo zajedno. Ako trenutno nema odgovarajuće grupe, možeš krenuti individualno dok se ne formira.</p>
+          <p>Do 3 učenika. Preporuka: isti razred i razina. Cijena po učeniku; termine dogovaramo. Ako nema grupe, možeš privremeno individualno do formiranja.</p>
         </details>
       </div>
     </section>
