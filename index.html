@@ -122,7 +122,7 @@
     .tiers li span{padding-right:6px}
     .tiers li strong{margin-left:10px;white-space:nowrap}
 
-    .tiers .perhour{font-size:0.9em; opacity:.85; margin-left:6px; white-space:nowrap}
+    .tiers .perhour{font-size:0.85em; opacity:.8; margin-left:6px; white-space:nowrap}
 
     /* Emphasize individual rate */
     .tiers li:first-child strong{font-size:1.12em}
@@ -160,7 +160,11 @@
       .pricing.pricing-packages{grid-template-columns:1fr}
     }
     header.hide{transform:translateY(-100%)}
-  </style>
+    /* Finer size for helper notes under price sections */
+  #cijene h2 + p.muted,
+  #cijene h3 + p.muted,
+  #cijene .pricing-packages .note{font-size:0.9em; opacity:.9}
+</style>
 </head>
 <body>
   <a href="#main" class="skip">Preskoči na sadržaj</a>
@@ -227,7 +231,7 @@
     <section id="cijene">
       <div class="container">
         <h2>Cjenik</h2>
-        <p class="muted" style="margin:-6px 0 8px">Male cijene "€/h" pokazuju koliko te to ispada po punom satu (radi snalaženja); naplata se vrši po terminu.</p>
+        <p class="muted" style="margin:-6px 0 8px">Prikaz "€/h" je orijentacijski (preračunato na 60 min).</p>
         <div class="pricing pricing-main" style="margin-top:18px">
           <div class="card">
             <h3>Školski sat — 45 min</h3>
@@ -311,7 +315,6 @@
               <li><span>3 učenika</span><strong>€240 <span class="muted" title="po učeniku">/uč</span></strong><span class="muted perhour"> · €10.00/h</span></li>
             </ul>
           </div>
-          <p class="muted note" style="margin-top:10px">Oznake "€/h" su orijentacijske i izražene po punom satu.</p>
         </div>
       </div>
     </section>
