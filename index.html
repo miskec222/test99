@@ -3,19 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MatBeat</title>
+  <title>Instrukcije iz matematike Osijek | MatBeat</title>
   <meta name="description" content="Instrukcije i poduke iz matematike u Osijeku — za osnovne i srednje škole. Pripreme za ispite, maturu i natjecanja uz individualni pristup." />
 
   <!-- SEO / Social -->
-  <link rel="canonical" href="https://www.matbeat.hr/">
-  <meta property="og:title" content="MatBeat">
+  <link rel="canonical" href="https://matbeat.hr/">
+  <meta property="og:title" content="Instrukcije iz matematike Osijek | MatBeat">
   <meta property="og:description" content="Instrukcije iz matematike u Osijeku — ispiti, matura, natjecanja.">
-  <meta property="og:url" content="https://www.matbeat.hr/">
+  <meta property="og:url" content="https://matbeat.hr/">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#0f172a">
 
-  <!-- Icons & PWA -->
+  <!-- Fonts (performance) -->
+  <!-- DEV: Isključen web font radi offline pregleda
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  -->
+
+  <!-- Icons & PWA (optional) -->
   <link rel="icon" href="/favicon.ico">
   <link rel="manifest" href="/site.webmanifest">
 
@@ -25,8 +32,8 @@
     "@type": "Tutor",
     "name": "MatBeat",
     "description": "Instrukcije iz matematike u Osijeku za OŠ i SŠ.",
-    "url": "https://www.matbeat.hr/",
-    "telephone": "+385995955456",
+    "url": "https://matbeat.hr/",
+    "telephone": "+3850000000",
     "email": "info@matbeat.hr",
     "address": {
       "@type": "PostalAddress",
@@ -73,41 +80,44 @@
     .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
     .card h3{margin:0 0 .35em}
-
-    /* Naglasi glavne cijene */
+    /* Smaller titles and muted text in feature cards */
+    /* Emphasis: main price list vs packages */
     .pricing-main .card{border:2px solid var(--accent);box-shadow:var(--shadow)}
     .pricing-main .card h3{font-size:1.08rem}
 
-    /* ===== GRID ZA KARTICE — ispravljeno ===== */
-    .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .pricing.pricing-packages{grid-template-columns:repeat(3,1fr)} /* i Paketi 3 u redu */
-
-    /* tablet: 2 u redu */
-    @media (max-width:1200px){
-      .pricing, .pricing.pricing-packages{grid-template-columns:repeat(2,1fr)}
-    }
-    /* mobitel: 1 u redu */
-    @media (max-width:900px){
-      .pricing, .pricing.pricing-packages{grid-template-columns:1fr}
-    }
-
+    .pricing-packages{grid-template-columns:repeat(3,1fr)}
     .pricing-packages .card{border:1px solid rgba(255,255,255,.08)}
+
+    @media (max-width:1200px){
+      .pricing-packages{grid-template-columns:repeat(2,1fr)}
+    }
+    /* <=900px pravilo koje sve pricing gride spušta na 1 kolonu */
+    .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    /* Packages layout aligned with main (3 cards per row, same spacing) */
+    .pricing.pricing-packages{grid-template-columns:repeat(3,1fr);gap:18px}
+    /* Packages footnote full-width */
     .pricing-packages .note{grid-column:1/-1;white-space:nowrap}
     @media (max-width:900px){.pricing-packages .note{white-space:normal}}
-
     .muted{color:#94a3b8}
     footer{padding:40px 0;color:#94a3b8}
     details{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:16px;margin-bottom:10px;box-shadow:var(--shadow)}
     summary{cursor:pointer;font-weight:600}
 
+    /* Subtle benefits strip (hero) */
     .small-benefits{margin-top:10px;color:#94a3b8;font-size:.95rem}
-    @media (max-width:480px){.small-benefits{font-size:.9rem; line-height:1.4}}
 
+    @media (max-width:480px){
+      .small-benefits{font-size:.9rem; line-height:1.4}
+    }
+
+    /* Pricing tiers list */
     .tiers{list-style:none;padding:0;margin:12px 0 0}
     .tiers li{display:flex;align-items:baseline;gap:8px;padding:8px 0;border-top:1px solid rgba(255,255,255,.08)}
     .tiers li:first-child{border-top:none}
     .tiers li span{padding-right:6px}
     .tiers li strong{margin-left:10px;white-space:nowrap;font-variant-numeric:tabular-nums}
+
+    /* Group pricing layout */
     .tiers .group{display:grid;grid-template-columns:minmax(64px,90px) 1fr;align-items:start;--group-gap:6px;gap:var(--group-gap);padding:6px 0 4px;border-top:1px solid rgba(255,255,255,.06);font-size:0.94em}
     .tiers .group > span{font-weight:600;color:#cbd5e1;align-self:center}
     .tiers .subtiers{list-style:none;margin:0;padding:0 12px 0 0;display:grid;gap:3px;font-size:1em}
@@ -115,36 +125,68 @@
     .tiers .subtiers li span{padding-right:6px;white-space:nowrap;font-weight:400;font-size:1em}
     .tiers .subtiers li strong{display:inline-block;min-width:4ch;text-align:right;margin-left:auto;margin-right:10px;white-space:nowrap;font-variant-numeric:tabular-nums}
 
+    /* Diagonal connectors from 'Grupno' to options */
+    .tiers .group{position:relative}
+    .tiers .subtiers li{position:relative}
+    
+    
+    
+
+    /* Emphasize individual rate */
+    .tiers > li:first-child strong{font-size:1.12em;margin-left:14px}
+    .tiers > li:first-child span{font-size:1.04em;font-weight:600}
+
+    /* Accessibility */
+    .skip{position:absolute;left:-9999px;top:auto}
+    .skip:focus{left:10px;top:10px;background:#fff;color:#000;padding:8px 12px;border-radius:8px;z-index:100}
+    a:focus, button:focus{outline:2px solid var(--accent); outline-offset:2px}
+
+    /* Hero list markers */
+    .hero-card ul{list-style:none;padding:0;margin:0}
+    .hero-card li{position:relative;padding-left:26px;line-height:1.8}
+    .hero-card li::before{content:"";position:absolute;left:0;top:.55em;width:14px;height:14px;border-radius:4px;background:linear-gradient(135deg,var(--accent),var(--accent-2))}
+
     @media (max-width:900px){
       .hero-grid{grid-template-columns:1fr}
-      .grid-3{grid-template-columns:1fr}
+      .grid-3,.pricing{grid-template-columns:1fr}
       .menu{gap:8px}
       .btn{padding:6px 10px;font-size:14px}
     }
 
     section{scroll-margin-top:90px}
+    /* Tighter spacing for nearby sections */
     #o-meni{padding-top:23px;padding-bottom:23px}
     #cijene{padding-top:23px}
 
+
+    /* iframe forma - fiksna visina */
+    .form-frame{width:100%;height:650px;max-width:100%;border:none;display:block;border-radius:var(--radius);box-shadow:var(--shadow);background:transparent}
+
+    /* Reduce motion for those who prefer it */
+    @media (prefers-reduced-motion: reduce){
+      *{animation:none !important;transition:none !important;scroll-behavior:auto}
+    }
+    @media (max-width:900px){
+      /* Ensure all pricing grids (including packages & matura) stack to 1 column on mobile */
+      .pricing.pricing-packages{grid-template-columns:1fr}
+    }
     header.hide{transform:translateY(-100%)}
 
+    /* Helper notes under price sections */
     #cijene h2 + p.muted,
     #cijene h3 + p.muted,
     #cijene .pricing-packages .note{font-size:0.9em; opacity:.9}
 
+    /* Spacing & sizing between Cjenik, Paketi, Pripreme */
     #cijene h2:not(:first-of-type){margin-top:40px; font-size:1.3rem; line-height:1.25}
     @media (max-width:900px){
       #cijene h2:not(:first-of-type){margin-top:32px; font-size:1.22rem}
     }
+  
+    /* Extra spacing only between Cjenik → Paketi */
     #cijene h2:nth-of-type(2){margin-top:56px}
     @media (max-width:900px){
       #cijene h2:nth-of-type(2){margin-top:44px}
-    }
-
-    .form-frame{width:100%;height:650px;max-width:100%;border:none;display:block;border-radius:var(--radius);box-shadow:var(--shadow);background:transparent}
-
-    @media (prefers-reduced-motion: reduce){
-      *{animation:none !important;transition:none !important;scroll-behavior:auto}
     }
   </style>
 </head>
@@ -168,6 +210,7 @@
       <div class="container hero-grid">
         <div>
           <h1>Poduke iz matematike</h1>
+          
           <p class="lead">Osijek — instrukcije iz matematike za osnovnu i srednju školu. Pripreme za ispite, državnu maturu i natjecanja — uz jasan, strpljiv pristup.</p>
           <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap">
             <a href="#kontakt" class="btn">Zatraži termin</a>
@@ -185,7 +228,6 @@
         </div>
       </div>
     </section>
-
     <section id="o-meni">
       <div class="container">
         <div class="hero-card">
@@ -194,6 +236,7 @@
         </div>
       </div>
     </section>
+
 
     <section id="cijene">
       <div class="container">
@@ -240,7 +283,6 @@
             </ul>
           </div>
         </div>
-
         <h2>Paketi</h2>
         <p class="muted" style="margin:-2px 0 10px">Izaberi paket i uštedi. Paketi su od 4 termina, a termine dogovaramo fleksibilno.</p>
         <div class="pricing pricing-packages" style="margin-top:6px">
@@ -328,10 +370,8 @@
             </ul>
           </div>
         </div>
-
       </div>
     </section>
-
     <section id="faq">
       <div class="container">
         <h2>Česta pitanja</h2>
@@ -362,6 +402,7 @@
       </div>
     </section>
 
+
     <section id="kontakt">
       <div class="container">
         <!-- Forma -->
@@ -379,40 +420,41 @@
     </section>
   </main>
 
-  <footer>
-    <div style="max-width:1120px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
-      <ul style="list-style:none;padding:0;margin:0;display:flex;gap:16px;flex-wrap:wrap;align-items:center">
-        <li>© <span id="y"></span> MatBeat</li>
-        <li>Adresa: J. J. Strossmayera 168, Osijek</li>
-        <li>Email: <a href="mailto:info@matbeat.hr">info@matbeat.hr</a></li>
-        <li>Telefon: 099/595-5456</li>
-        <li><a href="privatnost.html">Pravila privatnosti</a> · <a href="uvjeti.html">Uvjeti korištenja</a></li>
-      </ul>
-    </div>
-  </footer>
+<footer>
+  <div style="max-width:1120px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+    <ul style="list-style:none;padding:0;margin:0;display:flex;gap:16px;flex-wrap:wrap;align-items:center">
+      <li>© <span id="y"></span> MatBeat</li>
+      <li>Adresa: J. J. Strossmayera 168, Osijek</li>
+      <li>Email: <a href="mailto:info@matbeat.hr">info@matbeat.hr</a></li>
+      <li>Telefon: 099/595-5456</li>
+      <li><a href="privatnost.html">Pravila privatnosti</a> · <a href="uvjeti.html">Uvjeti korištenja</a></li>
+    </ul>
+  </div>
+</footer>
+
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
-  <script>
-  (() => {
-    let lastY = window.scrollY;
-    const header = document.querySelector('header');
-    const threshold = 80;
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-      const y = window.scrollY;
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          if (y > lastY && y > threshold) header.classList.add('hide');
-          else header.classList.remove('hide');
-          lastY = y;
-          ticking = false;
-        });
-        ticking = true;
-      }
-    }, { passive: true });
-  })();
-  </script>
+<script>
+(() => {
+  let lastY = window.scrollY;
+  const header = document.querySelector('header');
+  const threshold = 80;
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        if (y > lastY && y > threshold) header.classList.add('hide');
+        else header.classList.remove('hide');
+        lastY = y;
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+})();
+</script>
 </body>
 </html>
