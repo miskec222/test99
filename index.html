@@ -114,25 +114,8 @@
     .nav{display:flex; align-items:center; justify-content:space-between; height:64px}
     .brand{display:flex; align-items:center; gap:10px; font-weight:700}
     .logo{width:34px; height:34px; border-radius:10px; background:linear-gradient(135deg, var(--bg-start), var(--bg-end)); box-shadow:0 6px 14px rgba(0,0,0,.25)}
-    .menu{display:flex; gap:14px; flex-wrap:wrap; align-items:center}
+    .menu{display:flex; gap:14px; flex-wrap:wrap}
     .menu a{opacity:.92}
-
-    /* Mobile header: single line on narrow screens */
-    @media (max-width:560px){
-      .nav{height:56px; padding:6px 8px; flex-wrap:nowrap; gap:6px}
-      .brand{margin-bottom:0; display:flex; align-items:center}
-      .brand span{display:none} /* sakrij tekst branda na mobitelu, ostavi logo */
-      .logo{width:26px; height:26px}
-      .menu{flex:1 1 auto; justify-content:flex-end; gap:6px; overflow-x:auto; white-space:nowrap; align-items:center}
-      .menu a{font-size:13px; line-height:1}
-      .menu .btn{padding:5px 9px; font-size:13px; box-shadow:none}
-    }
-      .brand{margin-bottom:0}
-      .logo{width:28px; height:28px}
-      .menu{flex:1 1 auto; justify-content:flex-end; gap:8px; overflow-x:auto; white-space:nowrap; align-items:center}
-      .menu a{font-size:14px; line-height:1}
-      .menu .btn{padding:6px 10px; font-size:14px; box-shadow:none}
-    }
 
     .btn{display:inline-flex; align-items:center; justify-content:center; font-weight:700; cursor:pointer;
       padding:10px 14px; border-radius:12px; border:1px solid transparent; box-shadow:var(--shadow);
@@ -163,13 +146,6 @@
     .tier-head h3{margin:0; font-size:1.05rem}
     .price{font-weight:800; font-size:1.28rem; padding:0 2px; border:none; background:transparent; box-shadow:none}
     @media (max-width:900px){ .price{font-size:1.22rem} }
-
-    /* Contact form crop */
-    .card-form{padding:0; overflow:hidden}
-    .card-form iframe{width:100%; height:610px; border:0; display:block; border-radius:var(--radius)}
-    /* Tighter crop on smaller screens so dno forme ostaje skriveno, a "Pošalji" vidljiv */
-    @media (max-width:900px){ .card-form iframe{height:620px} }
-    @media (max-width:560px){ .card-form iframe{height:580px} }
 
     /* FAQ */
     details{background:var(--card); border:1px solid var(--stroke); border-radius:var(--radius); padding:14px; margin-bottom:10px}
@@ -317,7 +293,7 @@
     <section id="kontakt">
       <div class="container">
         <h2>Kontakt</h2>
-        <div class="card card-form">
+        <div class="card" style="padding:0">
           <iframe
             aria-label="MatBeat kontakt"
             title="Kontakt forma — MatBeat"
@@ -325,7 +301,9 @@
             referrerpolicy="no-referrer-when-downgrade"
             sandbox="allow-forms allow-scripts allow-same-origin"
             frameborder="0"
-            src="https://forms.zohopublic.eu/infomat1/form/Matbeatkontakt/formperma/5hTqqJ7yI3jLD4Sr0QS4MVm4uvMMwW3IcQ045rs41LM"></iframe>
+            style="width:100%; height:650px; border:0; display:block; border-radius:var(--radius)"
+            src="https://forms.zohopublic.eu/infomat1/form/Matbeatkontakt/formperma/5hTqqJ7yI3jLD4Sr0QS4MVm4uvMMwW3IcQ045rs41LM">
+          </iframe>
         </div>
       </div>
     </section>
