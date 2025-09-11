@@ -180,6 +180,17 @@
 
     /* 2) Sidra staju ispod sticky headera */
     section{ scroll-margin-top:72px }
+  
+    /* === DODANO: kontakt forma i mobilno ponašanje === */
+    .contact-frame{ height:600px }
+    @media (max-width:900px){
+      .contact-frame{ height:520px }
+      header{ position:static; backdrop-filter:none; }
+      html{ scroll-behavior:auto; }
+    }
+    @media (max-width:600px){
+      .contact-frame{ height:480px }
+    }
   </style>
 </head>
 <body>
@@ -311,7 +322,7 @@
             referrerpolicy="no-referrer-when-downgrade"
             sandbox="allow-forms allow-scripts allow-same-origin"
             frameborder="0"
-            style="width:100%; height:650px; border:0; display:block; border-radius:var(--radius)"
+            class="contact-frame" style="width:100%; border:0; display:block; border-radius:var(--radius)"
             src="https://forms.zohopublic.eu/infomat1/form/Matbeatkontakt/formperma/5hTqqJ7yI3jLD4Sr0QS4MVm4uvMMwW3IcQ045rs41LM">
           </iframe>
         </div>
