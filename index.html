@@ -202,10 +202,20 @@
     .price-pill.primary{background:linear-gradient(135deg, rgba(14,165,165,.18), rgba(37,99,235,.18)); border-color:rgba(255,255,255,.18)}
 
     /* NEW: top-right individual badge and group grid */
-    .indiv{display:flex; align-items:baseline; gap:8px; padding:8px 12px; border-radius:12px; border:1px solid var(--stroke); background:linear-gradient(135deg, rgba(14,165,165,.18), rgba(37,99,235,.18)); font-weight:700}
-    .indiv .label{font-weight:600; font-size:.9rem}
-    .indiv .amount{font-weight:800; font-size:1.15rem}
-    .group-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-top:8px}
+    .indiv{display:flex; align-items:baseline; gap:10px; padding:0; border:none; background:transparent; border-radius:0; box-shadow:none; font-weight:700}
+    .indiv .label{font-weight:600; font-size:.95rem; opacity:.9}
+    .indiv .amount{font-weight:800; font-size:1.05rem}
+    .group-row{display:flex; gap:18px; align-items:baseline; flex-wrap:wrap; margin-top:8px}
+    .group-item{display:flex; align-items:baseline; gap:8px; padding:4px 0 6px 12px; border-left:1px solid var(--stroke)}
+    .group-item:first-child{border-left:none; padding-left:0}
+
+    /* Layout: align items in a 2×2 grid: title left, individual right, then groups below */
+    .pricing .card{ display:grid; grid-template-columns:1fr auto; column-gap:12px; row-gap:8px; align-items:start }
+    .pricing .card .tier-head{ grid-column:1 / -1; display:grid; grid-template-columns:1fr auto; align-items:baseline; gap:12px }
+    .pricing .card .group-row{ grid-column:1 / -1; display:grid; grid-template-columns:1fr auto; column-gap:12px; align-items:baseline }
+    .group-item{ border:none; padding-left:0 }
+
+    .pricing .card .tier-head::after{ content:""; grid-column:1 / -1; height:1px; background:var(--stroke); opacity:.7; margin-top:6px }
 
     /* FAQ */
     details{background:var(--card); border:1px solid var(--stroke); border-radius:var(--radius); padding:14px; margin-bottom:10px}
@@ -329,23 +339,23 @@
         <div class="pricing" style="margin-top:6px">
           <div class="card">
             <div class="tier-head"><h3>45 min</h3><div class="indiv"><span class="label">Individualno</span><span class="amount">€20</span></div></div>
-            <div class="group-grid">
-              <div class="price-pill"><span class="label">Grupno (2)</span><span class="amount">€16</span></div>
-              <div class="price-pill"><span class="label">Grupno (3)</span><span class="amount">€13</span></div>
+            <div class="group-row">
+              <div class="group-item"><span class="label">Grupno (2)</span><span class="amount">€16</span></div>
+              <div class="group-item"><span class="label">Grupno (3)</span><span class="amount">€13</span></div>
             </div>
           </div>
           <div class="card">
             <div class="tier-head"><h3>60 min</h3><div class="indiv"><span class="label">Individualno</span><span class="amount">€25</span></div></div>
-            <div class="group-grid">
-              <div class="price-pill"><span class="label">Grupno (2)</span><span class="amount">€20</span></div>
-              <div class="price-pill"><span class="label">Grupno (3)</span><span class="amount">€16,25</span></div>
+            <div class="group-row">
+              <div class="group-item"><span class="label">Grupno (2)</span><span class="amount">€20</span></div>
+              <div class="group-item"><span class="label">Grupno (3)</span><span class="amount">€16</span></div>
             </div>
           </div>
           <div class="card">
             <div class="tier-head"><h3>90 min</h3><div class="indiv"><span class="label">Individualno</span><span class="amount">€35</span></div></div>
-            <div class="group-grid">
-              <div class="price-pill"><span class="label">Grupno (2)</span><span class="amount">€28</span></div>
-              <div class="price-pill"><span class="label">Grupno (3)</span><span class="amount">€22,75</span></div>
+            <div class="group-row">
+              <div class="group-item"><span class="label">Grupno (2)</span><span class="amount">€28</span></div>
+              <div class="group-item"><span class="label">Grupno (3)</span><span class="amount">€23</span></div>
             </div>
           </div>
         </div>
@@ -353,23 +363,23 @@
         <div class="pricing" style="margin-top:6px">
           <div class="card">
             <div class="tier-head"><h3>4 × 45 min</h3><div class="indiv"><span class="label">Individualno</span><span class="amount">€70</span></div></div>
-            <div class="group-grid">
-              <div class="price-pill"><span class="label">Grupno (2)</span><span class="amount">€56</span></div>
-              <div class="price-pill"><span class="label">Grupno (3)</span><span class="amount">€45,50</span></div>
+            <div class="group-row">
+              <div class="group-item"><span class="label">Grupno (2)</span><span class="amount">€56</span></div>
+              <div class="group-item"><span class="label">Grupno (3)</span><span class="amount">€46</span></div>
             </div>
           </div>
           <div class="card">
             <div class="tier-head"><h3>4 × 60 min</h3><div class="indiv"><span class="label">Individualno</span><span class="amount">€85</span></div></div>
-            <div class="group-grid">
-              <div class="price-pill"><span class="label">Grupno (2)</span><span class="amount">€68</span></div>
-              <div class="price-pill"><span class="label">Grupno (3)</span><span class="amount">€55,25</span></div>
+            <div class="group-row">
+              <div class="group-item"><span class="label">Grupno (2)</span><span class="amount">€68</span></div>
+              <div class="group-item"><span class="label">Grupno (3)</span><span class="amount">€55</span></div>
             </div>
           </div>
           <div class="card">
             <div class="tier-head"><h3>4 × 90 min</h3><div class="indiv"><span class="label">Individualno</span><span class="amount">€115</span></div></div>
-            <div class="group-grid">
-              <div class="price-pill"><span class="label">Grupno (2)</span><span class="amount">€92</span></div>
-              <div class="price-pill"><span class="label">Grupno (3)</span><span class="amount">€74,75</span></div>
+            <div class="group-row">
+              <div class="group-item"><span class="label">Grupno (2)</span><span class="amount">€92</span></div>
+              <div class="group-item"><span class="label">Grupno (3)</span><span class="amount">€75</span></div>
             </div>
           </div>
         </div>
@@ -378,23 +388,23 @@
         <div class="pricing" style="margin-top:6px">
           <div class="card">
             <div class="tier-head"><h3>6 × 90 min</h3><div class="indiv"><span class="label">Individualno</span><span class="amount">€165</span></div></div>
-            <div class="group-grid">
-              <div class="price-pill"><span class="label">Grupno (2)</span><span class="amount">€132</span></div>
-              <div class="price-pill"><span class="label">Grupno (3)</span><span class="amount">€107,25</span></div>
+            <div class="group-row">
+              <div class="group-item"><span class="label">Grupno (2)</span><span class="amount">€132</span></div>
+              <div class="group-item"><span class="label">Grupno (3)</span><span class="amount">€107</span></div>
             </div>
           </div>
           <div class="card">
             <div class="tier-head"><h3>10 × 90 min</h3><div class="indiv"><span class="label">Individualno</span><span class="amount">€250</span></div></div>
-            <div class="group-grid">
-              <div class="price-pill"><span class="label">Grupno (2)</span><span class="amount">€200</span></div>
-              <div class="price-pill"><span class="label">Grupno (3)</span><span class="amount">€162,50</span></div>
+            <div class="group-row">
+              <div class="group-item"><span class="label">Grupno (2)</span><span class="amount">€200</span></div>
+              <div class="group-item"><span class="label">Grupno (3)</span><span class="amount">€163</span></div>
             </div>
           </div>
           <div class="card">
             <div class="tier-head"><h3>16 × 90 min</h3><div class="indiv"><span class="label">Individualno</span><span class="amount">€365</span></div></div>
-            <div class="group-grid">
-              <div class="price-pill"><span class="label">Grupno (2)</span><span class="amount">€292</span></div>
-              <div class="price-pill"><span class="label">Grupno (3)</span><span class="amount">€237,25</span></div>
+            <div class="group-row">
+              <div class="group-item"><span class="label">Grupno (2)</span><span class="amount">€292</span></div>
+              <div class="group-item"><span class="label">Grupno (3)</span><span class="amount">€237</span></div>
             </div>
           </div>
         </div>
