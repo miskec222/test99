@@ -52,8 +52,7 @@
     "name": "MatBeat",
     "alternateName": "MatBeat instrukcije",
     "url": "https://matbeat.hr/"
-  }
-  </script>
+  }\script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -170,6 +169,17 @@
 
     /* Reduce motion */
     @media (prefers-reduced-motion: reduce){ *{animation:none !important; transition:none !important; scroll-behavior:auto} }
+
+    /* === DODANO: poravnanje linkova i sidra === */
+    /* 1) Poravnaj linkove s gumbom "Kontakt" u headeru */
+    .menu a{ display:inline-flex; align-items:center; height:44px; line-height:1; padding:0 10px; border-radius:12px }
+    .menu a:not(.btn):hover{ background:rgba(255,255,255,.06) }
+
+    /* Uskladi visinu/lin-height gumba */
+    .btn{ height:44px; line-height:1; padding:0 14px }
+
+    /* 2) Sidra staju ispod sticky headera */
+    section{ scroll-margin-top:72px }
   </style>
 </head>
 <body>
