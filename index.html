@@ -119,7 +119,14 @@
 
     /* Mobile header: single line on narrow screens */
     @media (max-width:560px){
-      .nav{height:56px; padding:6px 8px; flex-wrap:nowrap; gap:8px}
+      .nav{height:56px; padding:6px 8px; flex-wrap:nowrap; gap:6px}
+      .brand{margin-bottom:0; display:flex; align-items:center}
+      .brand span{display:none} /* sakrij tekst branda na mobitelu, ostavi logo */
+      .logo{width:26px; height:26px}
+      .menu{flex:1 1 auto; justify-content:flex-end; gap:6px; overflow-x:auto; white-space:nowrap; align-items:center}
+      .menu a{font-size:13px; line-height:1}
+      .menu .btn{padding:5px 9px; font-size:13px; box-shadow:none}
+    }
       .brand{margin-bottom:0}
       .logo{width:28px; height:28px}
       .menu{flex:1 1 auto; justify-content:flex-end; gap:8px; overflow-x:auto; white-space:nowrap; align-items:center}
