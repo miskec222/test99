@@ -286,8 +286,9 @@
     .contact-frame{ height:600px }
     @media (max-width:900px){
       .contact-frame{ height:560px }
-      header{ position:static; backdrop-filter:none; }
-      html{ scroll-behavior:auto; }
+      /* Header ostaje sticky i na mobitelu */
+      header{ position:sticky; top:0; backdrop-filter:saturate(1.1) blur(10px); }
+      /* zadržavamo smooth scroll i sidra */
     }
     @media (max-width:600px){
       .contact-frame{ height:520px }
@@ -311,11 +312,11 @@
     }
   </style>
 </head>
-<body>
+<body id="top">
   <a href="#main" class="skip">Preskoči na sadržaj</a>
   <header>
     <div class="container nav" role="navigation" aria-label="Glavna navigacija">
-      <div class="brand"><div class="logo" aria-hidden="true"></div> <span>MatBeat</span></div>
+      <div class="brand"><a href="#top" class="logo" aria-label="Na vrh"></a> <span>MatBeat</span></div>
       <nav class="menu">
         <a href="#o-meni">O meni</a>
         <a href="#cijene">Cjenik</a>
