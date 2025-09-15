@@ -137,6 +137,7 @@
       --radius:16px;
       --shadow:0 10px 30px rgba(0,0,0,.28);
       --form-blue:#19569c; /* ton forme (Zoho) */
+      --bg-start-soft:#0b6e8d; /* blaži, plavlji start za after-hero */
     }
 
     html{scroll-behavior:smooth}
@@ -189,7 +190,7 @@
     /* After-hero: od O meni do kraja */
     main{
       background:
-        linear-gradient(160deg, var(--bg-start) 0%, var(--bg-end) 38%, var(--form-blue) 78%),
+        linear-gradient(160deg, var(--bg-start-soft) 0%, var(--bg-end) 42%, var(--form-blue) 82%),
         radial-gradient(600px 300px at 70% 8%, rgba(255,255,255,.05), transparent);
     }
 
@@ -205,19 +206,19 @@
 
     /* Emphasized price layout */
     .tier-head{display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin:2px 0 8px}
-    .tier-head h3{margin:0; font-size:clamp(1.05rem, 1.6vw, 1.28rem); font-weight:800; white-space:nowrap}
+    .tier-head h3{margin:0; font-size:clamp(1.05rem, 1.6vw, 1.28rem); font-weight:700; white-space:nowrap}
 
     /* NEW: price matrix with 3 options per stavka */
     .price-matrix{display:grid; grid-template-columns:repeat(3,1fr); gap:10px}
     .price-pill{display:flex; align-items:baseline; justify-content:space-between; gap:8px; padding:10px 12px; border-radius:12px; border:1px solid var(--stroke); background:rgba(255,255,255,.04)}
     .price-pill .label{font-weight:600; font-size:.95rem}
-    .price-pill .amount{font-weight:800; font-size:1.05rem}
+    .price-pill .amount{font-weight:700; font-size:1.05rem}
     .price-pill.primary{background:linear-gradient(135deg, rgba(14,165,165,.18), rgba(37,99,235,.18)); border-color:rgba(255,255,255,.18)}
 
     /* NEW: top-right individual badge and group grid */
     .indiv{display:flex; align-items:baseline; gap:0; padding:0; border:none; background:transparent; border-radius:0; box-shadow:none; font-weight:700}
-    .indiv .label{font-weight:700; font-size:1.05rem; opacity:.95}
-    .indiv .amount{font-weight:900; font-size:1.28rem; font-variant-numeric: tabular-nums}
+    .indiv .label{font-weight:600; font-size:1.05rem; opacity:.95}
+    .indiv .amount{font-weight:700; font-size:1.28rem;}
     .group-row{display:contents}
     .group-left{font-weight:700; font-size:1.05rem; opacity:.95; grid-row:1 / span 2; align-self:center}
     .group-right{display:flex; flex-direction:column; gap:4px; justify-self:end; font-size:.9rem}
