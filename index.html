@@ -166,7 +166,7 @@
     .container{max-width:1040px; margin:0 auto; padding:0 20px}
 
     /* Header */
-    header{position:sticky; top:0; z-index:40; backdrop-filter:saturate(1.1) blur(10px);
+    header{position:-webkit-sticky; position:sticky; top:0; z-index:40; -webkit-backdrop-filter:saturate(1.1) blur(10px); backdrop-filter:saturate(1.1) blur(10px);
       background:rgba(6,17,38,.5); border-bottom:1px solid var(--stroke)}
     .nav{display:flex; align-items:center; justify-content:space-between; height:64px}
     .brand{display:flex; align-items:center; gap:10px; font-weight:700}
@@ -309,6 +309,12 @@
     }
     @media (max-width:480px){
       .container{ padding:0 14px }
+    }
+
+    /* Mobilni fix: fiksni header + padding-top (override) */
+    @media (max-width:900px){
+      header{ position:fixed; top:0; left:0; right:0; z-index:50; -webkit-backdrop-filter:saturate(1.1) blur(10px); backdrop-filter:saturate(1.1) blur(10px); }
+      body{ padding-top:64px }
     }
   </style>
 </head>
