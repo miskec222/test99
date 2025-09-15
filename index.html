@@ -75,7 +75,8 @@
         {"@type": "Offer", "name": "4 × 90 min", "price": "115", "priceCurrency": "EUR"},
         {"@type": "Offer", "name": "8 × 45 min", "price": "130", "priceCurrency": "EUR"},
         {"@type": "Offer", "name": "8 × 60 min", "price": "155", "priceCurrency": "EUR"},
-        {"@type": "Offer", "name": "8 × 90 min", "price": "210", "priceCurrency": "EUR"}      ]
+        {"@type": "Offer", "name": "8 × 90 min", "price": "210", "priceCurrency": "EUR"}
+      ]
     }
   }
   </script>
@@ -147,12 +148,16 @@
       font-family:"Plus Jakarta Sans",system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
       line-height:1.6;
       background:
+        /* suptilan sloj odozgo */
         linear-gradient(to bottom, rgba(255,255,255,.14), rgba(255,255,255,0) 60%),
-        radial-gradient(1200px 600px at 85% -10%, rgba(34,211,238,.18), transparent),
-        radial-gradient(800px 500px at -10% 10%, rgba(16,185,129,.18), transparent),
-        linear-gradient(160deg, #052f33 0%, #0b2a55 30%, #0a2469 55%, #0a2d8a 100%),
-        linear-gradient(160deg, var(--bg-start), var(--bg-end));
-      background-blend-mode:screen, screen, screen, overlay, normal;
+        /* blage radijalne mrlje, manje zasićene */
+        radial-gradient(1200px 600px at 85% -10%, rgba(34,211,238,.14), transparent 60%),
+        radial-gradient(800px 500px at -10% 10%, rgba(16,185,129,.14), transparent 60%),
+        /* kontinuirani prijelaz bez "step" efekta, završava u sivo-plavoj */
+        linear-gradient(160deg, #052f33 0%, #0b2a55 30%, #173a56 65%, #244a66 100%),
+        /* bazni ton: od postojeće tealske prema sivo-plavoj (ne jarko plavoj) */
+        linear-gradient(160deg, var(--bg-start), #3f596f);
+      background-blend-mode: screen, screen, screen, overlay, normal;
       min-height:100dvh;
     }
     img, iframe{max-width:100%}
