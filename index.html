@@ -289,15 +289,15 @@
     section{ scroll-margin-top:72px }
   
     /* === DODANO: kontakt forma i mobilno ponašanje === */
-    .contact-frame{ height:600px }
+    .contact-frame{ height:560px }
     @media (max-width:900px){
-      .contact-frame{ height:560px }
+      .contact-frame{ height:520px }
       /* Header ostaje sticky i na mobitelu */
       header{ position:sticky; top:0; backdrop-filter:saturate(1.1) blur(10px); }
       /* zadržavamo smooth scroll i sidra */
     }
     @media (max-width:600px){
-      .contact-frame{ height:520px }
+      .contact-frame{ height:480px }
     }
   
     /* === DODANO: mobilni header — sakrij tekst branda i sabij navigaciju === */
@@ -315,6 +315,7 @@
     }
     @media (max-width:480px){
       .container{ padding:0 14px }
+    }
     }
 
     /* Mobilni fix: fiksni header + padding-top (override) */
