@@ -193,11 +193,11 @@
     .hero .hero-card{ background:rgba(3,18,26,.55); backdrop-filter:saturate(1.05) blur(2px); border-color:rgba(255,255,255,.18) }
     @media (max-width:900px){ .hero{ background: linear-gradient(180deg, rgba(6,17,38,.75), rgba(6,17,38,.75)), url('/photo2.jpg') center/cover no-repeat; } }
 
-    }
-
     /* Feature bullets */
     .hero-card ul{list-style:none; padding:0; margin:0}
-    .hero-card li{position:relative; padding-left:26px; line-height:1.9}
+    /* ukloni UA markere u svim browserima */
+    .hero-card li{position:relative; padding-left:26px; line-height:1.9; list-style:none}
+    .hero-card li::marker{content:""}
     .hero-card li::before{content:""; position:absolute; left:0; top:.55em; width:14px; height:14px; border-radius:4px;
       background:linear-gradient(135deg, var(--bg-start), var(--bg-end))}
 
