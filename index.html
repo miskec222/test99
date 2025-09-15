@@ -181,13 +181,9 @@
 
     /* Sections */
     section{padding:40px 0; border-top:1px solid rgba(255,255,255,.06)}
-    .hero{padding:64px 0 24px; background:
-      /* blagi plavi tint + blago potamnjivanje preko fotografije */
-      linear-gradient(160deg, rgba(37,99,235,.18), rgba(14,165,165,.10)),
-      linear-gradient(180deg, rgba(6,17,38,.50), rgba(6,17,38,.50)),
-      url('/photo2.jpg') center right/cover no-repeat; border-bottom:1px solid var(--stroke)}    .hero-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:28px; align-items:center}
+    .hero{padding:64px 0 24px; background: linear-gradient(180deg, rgba(6,17,38,.62), rgba(6,17,38,.62)), url('/photo2.jpg') center right/cover no-repeat; border-bottom:1px solid var(--stroke)}    .hero-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:28px; align-items:center}
     h1{font-size:clamp(34px,6vw,56px); line-height:1.05; margin:.1em 0 .2em}
-    .lead{font-size:clamp(16px,2.4vw,20px); color:var(--muted); max-width:65ch}
+    .lead{font-size:clamp(16px,2.4vw,20px); color:#eef6ff; font-weight:600; max-width:65ch}
 
     .card{background:var(--card); border:1px solid var(--stroke); border-radius:var(--radius); padding:20px; box-shadow:var(--shadow)}
 
@@ -195,10 +191,7 @@
     .hero h1{ text-shadow:0 6px 24px rgba(0,0,0,.55) }
     .hero .lead{ text-shadow:0 4px 16px rgba(0,0,0,.5) }
     .hero .hero-card{ background:rgba(3,18,26,.55); backdrop-filter:saturate(1.05) blur(2px); border-color:rgba(255,255,255,.18) }
-    @media (max-width:900px){ .hero{ background:
-      linear-gradient(160deg, rgba(37,99,235,.24), rgba(14,165,165,.12)),
-      linear-gradient(180deg, rgba(6,17,38,.58), rgba(6,17,38,.58)),
-      url('/photo2.jpg') center/cover no-repeat; } }
+    @media (max-width:900px){ .hero{ background: linear-gradient(180deg, rgba(6,17,38,.75), rgba(6,17,38,.75)), url('/photo2.jpg') center/cover no-repeat; } }
 
     /* Feature bullets */
     .hero-card ul{list-style:none; padding:0; margin:0}
