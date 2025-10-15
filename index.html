@@ -363,6 +363,21 @@
       header{ position:fixed; top:0; left:0; right:0; z-index:50; -webkit-backdrop-filter:saturate(1.1) blur(10px); backdrop-filter:saturate(1.1) blur(10px); }
       body{ padding-top:64px }
     }
+    /* ——— tweak za H1 da stane lijepo u hero sekciju ——— */
+.hero h1{
+  /* malo manje od tvog globalnog h1: bilo clamp(34px, 6vw, 56px) */
+  font-size: clamp(28px, 4.8vw, 46px);
+  line-height: 1.06;
+}
+
+/* dodatno fino podešavanje za tablet/mobitel */
+@media (max-width: 900px){
+  .hero h1{ font-size: clamp(26px, 6vw, 38px); }
+}
+@media (max-width: 480px){
+  .hero h1{ font-size: clamp(24px, 7vw, 34px); }
+}
+
   </style>
 </head>
 <body id="top">
