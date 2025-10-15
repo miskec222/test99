@@ -82,16 +82,33 @@
   </script>
 
   <!-- Structured data: WebSite (fixed closing tag) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Instrukcije iz matematike u Osijeku",
-    "alternateName": "MatBeat",
+ <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://matbeat.hr/#website",
+  "url": "https://matbeat.hr/",
+  "name": "Instrukcije iz matematike u Osijeku",
+  "alternateName": "MatBeat",
+  "description": "Instrukcije iz matematike za osnovnu i srednju školu u Osijeku. Pripreme za ispite, državnu maturu i natjecanja uz individualni pristup.",
+  "inLanguage": "hr-HR",
+  "publisher": {
+    "@type": "Organization",
+    "name": "MatBeat",
     "url": "https://matbeat.hr/",
-    "inLanguage": "hr-HR"
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://matbeat.hr/og-image.jpg"
+    }
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://matbeat.hr/?s={search_term_string}",
+    "query-input": "required name=search_term_string"
   }
-  </script>
+}
+</script>
+
 
   <!-- Structured data: FAQPage (based on on-page FAQ) -->
   <script type="application/ld+json">
