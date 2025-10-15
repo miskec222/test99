@@ -37,21 +37,95 @@
   <!-- Preload hero background image -->
   <link rel="preload" as="image" href="/photo2.jpg" fetchpriority="high">
 
-  <!-- Icons & PWA -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3Cdefs/%3E%3Crect%20width%3D%22512%22%20height%3D%22512%22%20rx%3D%2296%22%20fill%3D%22%23112f91%22/%3E%3Ccircle%20cx%3D%22256%22%20cy%3D%22256%22%20r%3D%22190%22%20fill%3D%22%230ea5a5%22/%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2256%25%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20font-family%3D%22Plus%20Jakarta%20Sans%22%20font-size%3D%22246%22%20font-weight%3D%22700%22%20fill%3D%22%23fff%22%3EMB%3C/text%3E%3C/svg%3E">
+  <!-- Icons & PWA (optional) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3Cdefs/%3E%3Crect%20width%3D%22512%22%20height%3D%22512%22%20rx%3D%2296%22%20fill%3D%22%23112f91%22/%3E%3Ccircle%20cx%3D%22256%22%20cy%3D%22256%22%20r%3D%22190%22%20fill%3D%22%230ea5a5%22/%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2256%25%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20font-family%3D%22Plus%20Jakarta%20Sans%2Csystem-ui%2C-apple-system%2CSegoe%20UI%2CRoboto%2CHelvetica%2CArial%2Csans-serif%22%20font-size%3D%22246%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3EMB%3C/text%3E%3C/svg%3E">
   <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Structured data: LocalBusiness with offers -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://matbeat.hr/#matbeat",
+    "name": "MatBeat",
+    "description": "Instrukcije iz matematike u Osijeku za OŠ i SŠ.",
+    "url": "https://matbeat.hr/",
+    "telephone": "+385995955456",
+    "email": "info@matbeat.hr",
+    "logo": "https://matbeat.hr/favicon.svg",
+    "image": "https://matbeat.hr/og-image.jpg",
+    "priceRange": "€20–€365",
+    "areaServed": "HR",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "J. J. Strossmayera 168",
+      "addressLocality": "Osijek",
+      "postalCode": "31000",
+      "addressCountry": "HR"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Instrukcije i pripreme",
+      "itemListElement": [
+        {"@type": "Offer", "name": "45 min", "price": "20", "priceCurrency": "EUR"},
+        {"@type": "Offer", "name": "60 min", "price": "25", "priceCurrency": "EUR"},
+        {"@type": "Offer", "name": "90 min", "price": "35", "priceCurrency": "EUR"},
+        {"@type": "Offer", "name": "4 × 45 min", "price": "70", "priceCurrency": "EUR"},
+        {"@type": "Offer", "name": "4 × 60 min", "price": "85", "priceCurrency": "EUR"},
+        {"@type": "Offer", "name": "4 × 90 min", "price": "115", "priceCurrency": "EUR"},
+        {"@type": "Offer", "name": "8 × 45 min", "price": "130", "priceCurrency": "EUR"},
+        {"@type": "Offer", "name": "8 × 60 min", "price": "155", "priceCurrency": "EUR"},
+        {"@type": "Offer", "name": "8 × 90 min", "price": "210", "priceCurrency": "EUR"}
+      ]
+    }
+  }
+  </script>
+
+  <!-- Structured data: WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://matbeat.hr/#website",
+    "url": "https://matbeat.hr/",
+    "name": "Instrukcije iz matematike u Osijeku",
+    "alternateName": "MatBeat",
+    "description": "Instrukcije iz matematike za osnovnu i srednju školu u Osijeku. Pripreme za ispite, državnu maturu i natjecanja uz individualni pristup.",
+    "inLanguage": "hr-HR",
+    "publisher": {
+      "@type": "Organization",
+      "name": "MatBeat",
+      "url": "https://matbeat.hr/",
+      "logo": {"@type":"ImageObject","url":"https://matbeat.hr/og-image.jpg"}
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://matbeat.hr/?s={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- Structured data: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"Gdje se nalazimo?","acceptedAnswer":{"@type":"Answer","text":"Osijek — Strossmayerova 168, blizina nove Prve gimnazije i Opus Arene."}},
+      {"@type":"Question","name":"Kako koristim pakete?","acceptedAnswer":{"@type":"Answer","text":"Imaš 4 ili 8 termina i odradiš ih u tjedan dana, mjesec dana i slično – ti biraš. Veći paket – veća ušteda."}},
+      {"@type":"Question","name":"Kako otkazati ili pomaknuti termin?","acceptedAnswer":{"@type":"Answer","text":"Potrebno je javiti najmanje 24h ranije."}},
+      {"@type":"Question","name":"Mogu li dobiti instrukcije iz drugih predmeta?","acceptedAnswer":{"@type":"Answer","text":"Moguće je po dogovoru — iz srodnih predmeta (fizika, informatika i sl.)."}},
+      {"@type":"Question","name":"Mogu li satovi biti online?","acceptedAnswer":{"@type":"Answer","text":"Primarno uživo u Osijeku, a online po dogovoru (npr. kad je udaljenost prepreka dolasku)."}}
+    ]
+  }
+  </script>
 
   <style>
     :root{
-      --bg-start:#0ea5a5;
-      --bg-end:#2563eb;
-      --ink:#e6f3ff;
-      --muted:#b6cff2;
-      --card:rgba(255,255,255,.06);
-      --stroke:rgba(255,255,255,.12);
-      --accent:#22d3ee;
-      --radius:16px;
-      --shadow:0 10px 30px rgba(0,0,0,.28);
+      --bg-start:#0ea5a5; --bg-end:#2563eb; --ink:#e6f3ff; --muted:#b6cff2;
+      --card:rgba(255,255,255,.06); --stroke:rgba(255,255,255,.12);
+      --accent:#22d3ee; --radius:16px; --shadow:0 10px 30px rgba(0,0,0,.28);
     }
 
     html{scroll-behavior:smooth}
@@ -68,11 +142,11 @@
       background-blend-mode: screen, screen, screen, overlay, normal;
       min-height:100dvh;
     }
-
     img, iframe{max-width:100%}
     a{color:inherit; text-decoration:none}
     .container{max-width:1040px; margin:0 auto; padding:0 20px}
 
+    /* Header */
     header{position:sticky; top:0; z-index:40; backdrop-filter:saturate(1.1) blur(10px); background:rgba(6,17,38,.5); border-bottom:1px solid var(--stroke)}
     .nav{display:flex; align-items:center; justify-content:space-between; height:64px}
     .brand{display:flex; align-items:center; gap:10px; font-weight:700}
@@ -83,6 +157,7 @@
     .btn{display:inline-flex; align-items:center; justify-content:center; font-weight:700; cursor:pointer; padding:0 14px; border-radius:12px; border:1px solid transparent; box-shadow:var(--shadow); background:linear-gradient(135deg, var(--bg-start), var(--bg-end)); color:#03121a; height:44px}
     .btn.alt{background:transparent; color:var(--ink); border-color:var(--stroke)}
 
+    /* Sections */
     section{padding:28px 0 40px; border-top:1px solid rgba(255,255,255,.06); scroll-margin-top:72px}
     .hero{padding:36px 0 28px; background: linear-gradient(180deg, rgba(6,17,38,.68), rgba(6,17,38,.68)), url('/photo2.jpg') center right/cover no-repeat; border-bottom:1px solid var(--stroke)}
     .hero-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:28px; align-items:center}
@@ -90,39 +165,78 @@
     .lead{font-size:clamp(16px,2.4vw,20px); color:#eef6ff; font-weight:600; max-width:65ch}
 
     .card{background:var(--card); border:1px solid var(--stroke); border-radius:var(--radius); padding:20px; box-shadow:var(--shadow)}
+
+    /* Hero readability tweaks */
     .hero h1{text-shadow:0 6px 24px rgba(0,0,0,.55)}
     .hero .lead{text-shadow:0 4px 16px rgba(0,0,0,.5)}
     .hero .hero-card{background:rgba(3,18,26,.55); backdrop-filter:saturate(1.05) blur(2px); border-color:rgba(255,255,255,.18)}
-    @media (max-width:900px){.hero{background:linear-gradient(180deg, rgba(6,17,38,.75), rgba(6,17,38,.75)), url('/photo2.jpg') center/cover no-repeat}}
+    @media (max-width:900px){.hero{background: linear-gradient(180deg, rgba(6,17,38,.75), rgba(6,17,38,.75)), url('/photo2.jpg') center/cover no-repeat}}
 
+    /* Pricing grid + helpers (tvoji originalni stilovi) */
     .pricing{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
-    .indiv{display:flex; align-items:baseline; font-weight:700}
+    .tier-head{display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin:2px 0 8px}
+    .tier-head h3{margin:0; font-size:clamp(1.05rem, 1.6vw, 1.28rem); font-weight:800; white-space:nowrap}
+    .price-matrix{display:grid; grid-template-columns:repeat(3,1fr); gap:10px}
+    .price-pill{display:flex; align-items:baseline; justify-content:space-between; gap:8px; padding:10px 12px; border-radius:12px; border:1px solid var(--stroke); background:rgba(255,255,255,.04)}
+    .price-pill .label{font-weight:600; font-size:.95rem}
+    .price-pill .amount{font-weight:800; font-size:1.05rem}
+    .price-pill.primary{background:linear-gradient(135deg, rgba(14,165,165,.18), rgba(37,99,235,.18)); border-color:rgba(255,255,255,.18)}
+
+    .indiv{display:flex; align-items:baseline; gap:0; font-weight:700}
     .indiv .label{font-weight:700; font-size:1.05rem; opacity:.95}
-    .indiv .amount{font-weight:900; font-size:1.28rem}
+    .indiv .amount{font-weight:900; font-size:1.28rem; font-variant-numeric: tabular-nums}
     .group-row{display:contents}
-    .group-left{font-weight:700; font-size:1.05rem; opacity:.95; grid-row:1/span 2; align-self:center}
+    .group-left{font-weight:700; font-size:1.05rem; opacity:.95; grid-row:1 / span 2; align-self:center}
     .group-right{display:flex; flex-direction:column; gap:4px; justify-self:end; font-size:.9rem}
     .group-right .row{display:flex; align-items:baseline; gap:0}
-    .group-sep{align-self:center; opacity:.7; text-align:center}
+    .group-sep{align-self:center; justify-self:center; text-align:center; opacity:.7; margin:0}
 
+    .pricing .card{ display:grid; grid-template-columns:1fr auto; column-gap:12px; row-gap:8px; align-items:start }
+    .pricing .card .tier-head{ grid-column:1 / -1; display:grid; grid-template-columns:1fr; align-items:start; gap:6px }
+    .pricing .card .group-row{ grid-column:1 / -1; display:grid; grid-template-columns:auto 1fr auto; grid-template-rows:auto auto; column-gap:0; align-items:center }
+    .group-item{ border:none; padding-left:0 }
+    .pricing .card .tier-head::after{ content:""; grid-column:1 / -1; height:1px; background:var(--stroke); opacity:.7; margin-top:6px }
+    .indiv .label::after{ content:"·"; display:inline-block; margin:0 2ch; opacity:.7 }
+    .group-right .row .label::after{ content:"·"; opacity:.7; margin:0 .6ch }
+
+    /* FAQ */
     details{background:var(--card); border:1px solid var(--stroke); border-radius:var(--radius); padding:14px; margin-bottom:10px}
     summary{cursor:pointer; font-weight:600}
+    .subtitle{font-style:italic; color:var(--muted); font-size:.95rem}
     .muted{color:var(--muted)}
+    .price-note{margin:0 0 12px}
+
+    /* Footer */
     footer{padding:38px 0; color:var(--muted)}
 
     /* Responsive */
     @media (max-width:900px){
       .hero-grid{grid-template-columns:1fr}
       .pricing{grid-template-columns:1fr}
-      .brand span{display:none}
-      .menu{gap:10px; flex-wrap:nowrap}
-      .menu a{font-size:0.95rem; height:40px; padding:0 8px}
-      .btn{height:40px; padding:0 12px}
+      .price-matrix{grid-template-columns:repeat(2,1fr)}
+      .brand span{ display:none }
+      .brand{ gap:6px }
+      .menu{ gap:10px; flex-wrap:nowrap }
+      .menu a{ font-size:0.95rem; height:40px; padding:0 8px }
+      .btn{ height:40px; padding:0 12px }
     }
     @media (max-width:600px){
-      .menu a{font-size:0.9rem; height:36px; padding:0 6px}
-      .btn{height:36px; padding:0 10px}
+      .price-matrix{grid-template-columns:1fr}
+      .menu{ gap:8px; flex-wrap:nowrap }
+      .menu a{ font-size:0.9rem; height:36px; padding:0 6px }
+      .btn{ height:36px; padding:0 10px }
     }
+    @media (max-width:480px){
+      .container{ padding:0 14px }
+    }
+
+    /* Accessibility */
+    .skip{position:absolute; left:-9999px; top:auto}
+    .skip:focus{left:10px; top:10px; background:#fff; color:#000; padding:8px 12px; border-radius:8px; z-index:100}
+    a:focus, button:focus{outline:2px solid var(--accent); outline-offset:2px}
+
+    /* Reduce motion */
+    @media (prefers-reduced-motion: reduce){ *{animation:none !important; transition:none !important; scroll-behavior:auto} }
 
     /* === PROMO BANNER === */
     .promo-banner {
@@ -144,35 +258,32 @@
       font-size: 1rem;
       color: var(--ink);
     }
-    @media (max-width:600px){
-      .promo-banner{padding:12px 14px}
-      .promo-banner strong{font-size:1.05rem}
-      .promo-banner span{font-size:0.95rem}
+    @media (max-width: 600px) {
+      .promo-banner { padding: 12px 14px; }
+      .promo-banner strong { font-size: 1.05rem; }
+      .promo-banner span { font-size: 0.95rem; }
     }
 
-    /* === Animacija pojavljivanja === */
-    @keyframes promoFadeUp {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    /* === Animacija pojavljivanja (scroll-driven, fallback + respects R-M) === */
+    @keyframes promoFadeUp { from {opacity:0; transform:translateY(10px);} to {opacity:1; transform:translateY(0);} }
     @media (prefers-reduced-motion: reduce){
-      #cijene .promo-banner{animation:none!important;opacity:1!important;transform:none!important;}
+      #cijene .promo-banner { animation: none !important; opacity: 1 !important; transform: none !important; }
     }
-    @supports (animation-timeline: view()){
-      #cijene .promo-banner{
-        opacity:0;
-        transform:translateY(10px);
-        will-change:opacity,transform;
-        animation-name:promoFadeUp;
-        animation-duration:700ms;
-        animation-timing-function:ease-out;
-        animation-fill-mode:both;
-        animation-timeline:view();
-        animation-range:entry 20% cover 30%;
+    @supports (animation-timeline: view()) {
+      #cijene .promo-banner {
+        opacity: 0; transform: translateY(10px); will-change: opacity, transform;
+        animation-name: promoFadeUp; animation-duration: 700ms; animation-timing-function: ease-out; animation-fill-mode: both;
+        animation-timeline: view(); animation-range: entry 20% cover 30%;
       }
     }
-    @supports not (animation-timeline: view()){
-      #cijene .promo-banner{animation:promoFadeUp 600ms ease-out both;}
+    @supports not (animation-timeline: view()) {
+      #cijene .promo-banner { animation: promoFadeUp 600ms ease-out both; }
+    }
+
+    /* Mobilni fix: fiksni header + padding-top (kao u tvom originalu) */
+    @media (max-width:900px){
+      header{ position:fixed; top:0; left:0; right:0; z-index:50; backdrop-filter:saturate(1.1) blur(10px); }
+      body{ padding-top:64px }
     }
   </style>
 </head>
@@ -190,7 +301,7 @@
     </div>
   </header>
 
-  <main id="main">
+  <main id="main" role="main">
     <section class="hero">
       <div class="container hero-grid">
         <div>
@@ -198,14 +309,14 @@
           <p class="lead">Osijek — instrukcije iz matematike za osnovnu i srednju školu. Pripreme za ispite, državnu maturu i natjecanja.</p>
           <div style="margin-top:18px; display:flex; gap:10px; flex-wrap:wrap">
             <a href="#kontakt" class="btn">Zatraži termin</a>
-            <a href="tel:+385995955456" class="btn alt">Nazovi: 099/595-5456</a>
+            <a href="tel:+385995955456" class="btn alt" aria-label="Nazovi 099 595 5456">Nazovi: 099/595-5456</a>
           </div>
         </div>
         <div>
           <div class="card hero-card">
             <ul>
               <li>Praćenje napretka i plan učenja</li>
-              <li>Mogućnost manjih grupa (do 3 učenika) uz popust</li>
+              <li>Mogućnost manjih grupa (do 3&nbsp;učenika) uz popust</li>
               <li>Besplatan kratki probni termin — dogovori kroz kontakt obrazac ili nazovi</li>
             </ul>
           </div>
@@ -225,28 +336,191 @@
     <section id="cijene">
       <div class="container">
         <h2>Cjenik</h2>
+
+        <!-- NOVO: PROMO BANNER -->
         <div class="card promo-banner">
           <strong>Posebna ponuda:</strong>
           <span>20% popusta na sve cijene do popunjavanja termina!</span>
         </div>
 
         <p class="muted price-note">Cijene su po učeniku.</p>
-        <!-- ostatak cjenika ostaje nepromijenjen -->
+
+        <div class="pricing" style="margin-top:6px">
+          <div class="card">
+            <div class="tier-head"><h3>45 min</h3><div class="indiv"><span class="label">Individualno</span><span class="amount">€20</span></div></div>
+            <div class="group-row">
+              <div class="group-left">Grupno</div>
+              <div class="group-sep" aria-hidden="true">·</div>
+              <div class="group-right">
+                <div class="row"><span class="label">2 učenika</span><span class="amount">€16 /po uč.</span></div>
+                <div class="row"><span class="label">3 učenika</span><span class="amount">€13 /po uč.</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="tier-head"><h3>60 min</h3><div class="indiv"><span class="label">Individualno</span><span class="amount">€25</span></div></div>
+            <div class="group-row">
+              <div class="group-left">Grupno</div>
+              <div class="group-sep" aria-hidden="true">·</div>
+              <div class="group-right">
+                <div class="row"><span class="label">2 učenika</span><span class="amount">€20 /po uč.</span></div>
+                <div class="row"><span class="label">3 učenika</span><span class="amount">€16 /po uč.</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="tier-head"><h3>90 min</h3><div class="indiv"><span class="label">Individualno</span><span class="amount">€35</span></div></div>
+            <div class="group-row">
+              <div class="group-left">Grupno</div>
+              <div class="group-sep" aria-hidden="true">·</div>
+              <div class="group-right">
+                <div class="row"><span class="label">2 učenika</span><span class="amount">€28 /po uč.</span></div>
+                <div class="row"><span class="label">3 učenika</span><span class="amount">€23 /po uč.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h2 style="margin-top:40px">Paketi</h2>
+        <p class="muted price-note" style="margin:-2px 0 10px">Ako očekuješ više dolazaka – odaberi paket i uštedi.<br>Olakšaj si praćenje nastave, pripremi se za težak ispit ili za državnu maturu. Vrijeme održavanja termina po dogovoru.</p>
+
+        <h3>4 termina</h3>
+        <div class="pricing" style="margin-top:6px">
+          <div class="card">
+            <div class="tier-head"><h3>4 × 45 min</h3><div class="indiv"><span class="label">Individualno</span><span class="amount">€70</span></div></div>
+            <div class="group-row">
+              <div class="group-left">Grupno</div>
+              <div class="group-sep" aria-hidden="true">·</div>
+              <div class="group-right">
+                <div class="row"><span class="label">2 učenika</span><span class="amount">€56 /po uč.</span></div>
+                <div class="row"><span class="label">3 učenika</span><span class="amount">€46 /po uč.</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="tier-head"><h3>4 × 60 min</h3><div class="indiv"><span class="label">Individualno</span><span class="amount">€85</span></div></div>
+            <div class="group-row">
+              <div class="group-left">Grupno</div>
+              <div class="group-sep" aria-hidden="true">·</div>
+              <div class="group-right">
+                <div class="row"><span class="label">2 učenika</span><span class="amount">€68 /po uč.</span></div>
+                <div class="row"><span class="label">3 učenika</span><span class="amount">€55 /po uč.</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="tier-head"><h3>4 × 90 min</h3><div class="indiv"><span class="label">Individualno</span><span class="amount">€115</span></div></div>
+            <div class="group-row">
+              <div class="group-left">Grupno</div>
+              <div class="group-sep" aria-hidden="true">·</div>
+              <div class="group-right">
+                <div class="row"><span class="label">2 učenika</span><span class="amount">€92 /po uč.</span></div>
+                <div class="row"><span class="label">3 učenika</span><span class="amount">€75 /po uč.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3>8 termina</h3>
+        <div class="pricing" style="margin-top:6px">
+          <div class="card">
+            <div class="tier-head"><h3>8 × 45 min</h3><div class="indiv"><span class="label">Individualno</span><span class="amount">€130</span></div></div>
+            <div class="group-row">
+              <div class="group-left">Grupno</div>
+              <div class="group-sep" aria-hidden="true">·</div>
+              <div class="group-right">
+                <div class="row"><span class="label">2 učenika</span><span class="amount">€105 /po uč.</span></div>
+                <div class="row"><span class="label">3 učenika</span><span class="amount">€85 /po uč.</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="tier-head"><h3>8 × 60 min</h3><div class="indiv"><span class="label">Individualno</span><span class="amount">€155</span></div></div>
+            <div class="group-row">
+              <div class="group-left">Grupno</div>
+              <div class="group-sep" aria-hidden="true">·</div>
+              <div class="group-right">
+                <div class="row"><span class="label">2 učenika</span><span class="amount">€125 /po uč.</span></div>
+                <div class="row"><span class="label">3 učenika</span><span class="amount">€100 /po uč.</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="tier-head"><h3>8 × 90 min</h3><div class="indiv"><span class="label">Individualno</span><span class="amount">€210</span></div></div>
+            <div class="group-row">
+              <div class="group-left">Grupno</div>
+              <div class="group-sep" aria-hidden="true">·</div>
+              <div class="group-right">
+                <div class="row"><span class="label">2 učenika</span><span class="amount">€168 /po uč.</span></div>
+                <div class="row"><span class="label">3 učenika</span><span class="amount">€138 /po uč.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- ostali dijelovi (FAQ, kontakt, footer) ostaju identični -->
-    <footer>
-      <div class="container" style="display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap">
-        <ul style="list-style:none; padding:0; margin:0; display:flex; gap:16px; flex-wrap:wrap; align-items:center">
-          <li>© <span id="y"></span> MatBeat</li>
-          <li>Adresa: J. J. Strossmayera 168, Osijek</li>
-          <li>Email: <a href="mailto:info@matbeat.hr">info@matbeat.hr</a></li>
-          <li>Telefon: <a href="tel:+385995955456">099/595-5456</a></li>
-          <li><a href="privatnost.html">Pravila privatnosti</a> · <a href="uvjeti.html">Uvjeti korištenja</a></li>
-        </ul>
+    <section id="faq">
+      <div class="container">
+        <h2>Česta pitanja</h2>
+        <details>
+          <summary>Gdje se nalazimo?</summary>
+          <p>Osijek — Strossmayerova 168, blizina nove Prve gimnazije i Opus Arene.</p>
+        </details>
+        <details>
+          <summary>Kako koristim pakete?</summary>
+          <p>Imaš 4 ili 8 termina i odradiš ih u tjedan dana, mjesec dana i slično – ti biraš. Veći paket – veća ušteda.</p>
+        </details>
+        <details>
+          <summary>Kako otkazati ili pomaknuti termin?</summary>
+          <p>Potrebno je javiti najmanje 24h ranije.</p>
+        </details>
+        <details>
+          <summary>Mogu li dobiti instrukcije iz drugih predmeta?</summary>
+          <p>Moguće je po dogovoru — iz srodnih predmeta (fizika, informatika i sl.).</p>
+        </details>
+        <details>
+          <summary>Mogu li satovi biti online?</summary>
+          <p>Primarno uživo u Osijeku, a online po dogovoru (npr. kad je udaljenost prepreka dolasku).</p>
+        </details>
+        <details>
+          <summary>Kako funkcionira grupni rad?</summary>
+          <p>Do 3 učenika — poželjno isti razred i razina; Termine dogovaramo, a ako nema grupe, možeš privremeno individualno do formiranja.</p>
+        </details>
       </div>
-    </footer>
+    </section>
+
+    <section id="kontakt">
+      <div class="container">
+        <h2>Kontakt</h2>
+        <div class="card" style="padding:0">
+          <iframe
+            aria-label="MatBeat kontakt"
+            title="Kontakt forma — MatBeat"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            sandbox="allow-forms allow-scripts allow-same-origin"
+            frameborder="0"
+            class="contact-frame" style="width:100%; border:0; display:block; border-radius:var(--radius)"
+            src="https://forms.zohopublic.eu/infomat1/form/Matbeatkontakt/formperma/5hTqqJ7yI3jLD4Sr0QS4MVm4uvMMwW3IcQ045rs41LM">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap">
+      <ul style="list-style:none; padding:0; margin:0; display:flex; gap:16px; flex-wrap:wrap; align-items:center">
+        <li>© <span id="y"></span> MatBeat</li>
+        <li>Adresa: J. J. Strossmayera 168, Osijek</li>
+        <li>Email: <a href="mailto:info@matbeat.hr">info@matbeat.hr</a></li>
+        <li>Telefon: <a href="tel:+385995955456">099/595-5456</a></li>
+        <li><a href="privatnost.html">Pravila privatnosti</a> · <a href="uvjeti.html">Uvjeti korištenja</a></li>
+      </ul>
+    </div>
+  </footer>
 
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
