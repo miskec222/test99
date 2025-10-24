@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://matbeat.hr/sitemap.xml
+
+Sitemap: https://www.matbeat.hr/sitemap.xml
